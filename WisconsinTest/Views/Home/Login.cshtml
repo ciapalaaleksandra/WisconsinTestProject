@@ -1,0 +1,46 @@
+﻿@model WisconsinTest.Models.Users
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+
+    <body>
+        @Html.ActionLink("Zarejestruj psychologa", "PsychologistRegistration")
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            if (@ViewBag.Error != null)
+            {
+                <div style="color: red">
+                    <center>@ViewBag.Error</center>
+                </div>
+            }
+
+            <table align="center" cellpadding="2" cellspacing="2">
+                <tr align="center">
+
+                <tr>
+                    <td>Login:</td>
+                    <td>@Html.TextBoxFor(a => a.Login)</td>
+                </tr>
+                <tr>
+                    <td> Hasło:</td>
+                    <td> @Html.PasswordFor(a => a.Passowrd)</td>
+                </tr>
+
+
+            </table>
+            <br />
+            <center><input type="submit" value="Zaloguj" class="btn" /></center>
+
+        }
+    </body>
+</html>
