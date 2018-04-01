@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WiscounsinTestDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PsychologistId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Psychologists" Relationship="Self.FK_Patients_Psychologists" FromRole="Patients" ToRole="Psychologists" />
+    <NavigationProperty Name="Surveys" Relationship="Self.FK_Surveys_Patients" FromRole="Patients" ToRole="Surveys" />
+  </EntityType>
+  <EntityType Name="Psychologists">
+    <Key>
+      <PropertyRef Name="PsychologistId" />
+    </Key>
+    <Property Name="PsychologistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Psychologists" FromRole="Psychologists" ToRole="Patients" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Psychologists_Users" FromRole="Psychologists" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="ResultId" />
+    </Key>
+    <Property Name="ResultId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SurveyId" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfTries" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CorrectAnswers" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PerseverationErrors" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NonPerseveranceErrors" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Rules" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Surveys" Relationship="Self.FK_Results_Surveys" FromRole="Results" ToRole="Surveys" />
+  </EntityType>
+  <EntityType Name="Surveys">
+    <Key>
+      <PropertyRef Name="SurveyId" />
+    </Key>
+    <Property Name="SurveyId" Type="Int32" Nullable="false" />
+    <Property Name="PatientId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Surveys_Patients" FromRole="Surveys" ToRole="Patients" />
+    <NavigationProperty Name="Results" Relationship="Self.FK_Results_Surveys" FromRole="Surveys" ToRole="Results" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passowrd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Psychologists" Relationship="Self.FK_Psychologists_Users" FromRole="Users" ToRole="Psychologists" />
+  </EntityType>
+  <Association Name="FK_Patients_Psychologists">
+    <End Role="Psychologists" Type="Self.Psychologists" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Psychologists">
+        <PropertyRef Name="PsychologistId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="PsychologistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Surveys_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="Surveys">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Psychologists_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Psychologists" Type="Self.Psychologists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Psychologists">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_Surveys">
+    <End Role="Surveys" Type="Self.Surveys" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Surveys">
+        <PropertyRef Name="SurveyId" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="SurveyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WiscounsinTestDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Patients" EntityType="Self.Patients" />
+    <EntitySet Name="Psychologists" EntityType="Self.Psychologists" />
+    <EntitySet Name="Results" EntityType="Self.Results" />
+    <EntitySet Name="Surveys" EntityType="Self.Surveys" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_Patients_Psychologists" Association="Self.FK_Patients_Psychologists">
+      <End Role="Psychologists" EntitySet="Psychologists" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Surveys_Patients" Association="Self.FK_Surveys_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Surveys" EntitySet="Surveys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Psychologists_Users" Association="Self.FK_Psychologists_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Psychologists" EntitySet="Psychologists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_Surveys" Association="Self.FK_Results_Surveys">
+      <End Role="Surveys" EntitySet="Surveys" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
