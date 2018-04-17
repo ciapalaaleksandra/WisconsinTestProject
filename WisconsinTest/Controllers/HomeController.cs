@@ -8,6 +8,7 @@ using System.Data.Entity;
 
 namespace WisconsinTest.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         //public ActionResult Index()
