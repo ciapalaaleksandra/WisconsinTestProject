@@ -9,9 +9,16 @@ namespace WisconsinTest.Controllers
     public class TestController : Controller
     {
         // GET: Test
-        public ActionResult Index()
+        /*public ActionResult Index()
+        {
+            return View();
+        }*/
+
+        public ActionResult Test()
         {
             return View();
         }
+
+
     }
 }

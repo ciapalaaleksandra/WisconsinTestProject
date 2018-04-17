@@ -11,7 +11,35 @@
     <title>Test</title>
 </head>
 <body>
-    <div> 
-    </div>
+    <h2 style="text-align: center;"><strong>Test</strong></h2>
+
+    @using (Html.BeginForm("Test", "HomeController", FormMethod.Post))
+    {
+        <h2 style="text-align: center;">
+            <button type="button" name="btnCircle" class="button" style="width: 250px; height: 250px">
+                <img src="~/Content/Images/circleTest.png" />
+            </button>
+            <button type="button" name="btnStar" class="button" style="width: 250px; height: 250px">
+                <img src="~/Content/Images/starTest.png" />
+            </button>
+            <button type="button" name="btnCross" class="button" style="width: 250px; height: 250px">
+                <img src="~/Content/Images/crossTest.png" />
+            </button>
+            <button type="button" name="btnRectangle" class="button" style="width: 250px; height: 250px">
+                <img src="~/Content/Images/rectangleTest.png" />
+            </button>
+            <p></p>
+            <input type="image" name="btnStar" src="~/Content/Images/starTest.png" width="250" height="250" />
+            <input type="image" name="btnCircle" src="~/Content/Images/circleTest.png" width="250" height="250" />
+            <input type="image" name="btnCross" src="~/Content/Images/crossTest.png" width="250" height="250" />
+            <input type="image" name="btnRectangle" src="~/Content/Images/rectangleTest.png" width="250" height="250" />
+        </h2>
+    }
+
+
+    <h2 style="text-align: center;">
+        <img src="~/Images/starTest.png" width="300" height="300" />
+        Wynik!
+    </h2>
 </body>
 </html>
