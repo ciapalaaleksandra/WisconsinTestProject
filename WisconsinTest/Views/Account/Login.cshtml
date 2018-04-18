@@ -3,7 +3,8 @@
 @{
     ViewBag.Title = "Log in";
 }
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="7798138621-n4ibmc0h51b9g8ogfqp9o9cbkd2uc4gp.apps.googleusercontent.com" />
 <h2>@ViewBag.Title.</h2>
 <div class="row">
     <div class="col-md-8">
@@ -56,6 +57,7 @@
             @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
     </div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 </div>
 
 @section Scripts {
