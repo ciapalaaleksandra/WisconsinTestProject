@@ -399,8 +399,9 @@
     <Content Include="Views\Psychologist\Details.cshtml" />
     <Content Include="Views\Psychologist\Edit.cshtml" />
     <Content Include="Views\Psychologist\Index.cshtml" />
-    <Content Include="Views\Test\StartTest.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
+    <Content Include="Views\Test\StartTest.cshtml" />
+    <Content Include="Views\Test\TestResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
