@@ -13,13 +13,7 @@ namespace WisconsinTest.Controllers
     public class TestController : Controller
     {
 
-        public ActionResult Start()
-        {
-            return View();
-        }
-
-            //UTWORZENIE SESJI:
-        public ActionResult Test()
+        public ActionResult StartTest()
         {
             // Session start parameters
             Session["Cards"] = WiscounsinTest.Models.CardList.GetCards();
@@ -32,21 +26,35 @@ namespace WisconsinTest.Controllers
             Session["PerseverativeErrors"] = 0;
             Session["NonPerseverativeErrors"] = 0;
 
-            string directoryPath = @"~/Content/Images/cards";
-            Session["ImageFileName"] = PickImageFromDirectory(directoryPath);
-            //ViewBag.ImagePath = Path.Combine(directoryPath, (string)Session["ImageFileName"]);
-            ViewBag.ImagePath = directoryPath+"/"+(string)Session["ImageFileName"];
-
             return View();
         }
 
-
-        // OBSŁUGA PRZYCISKÓW(KART):
-
-        /*public ActionResult Test(string button)
+            //UTWORZENIE SESJI:
+        public ActionResult Test(string button)
         {
-            if ((int)Session["NumberOfChanges"] <= 6)
+            if ((int)Session["NumberOfChanges"] <= 1)//6 ma byc
             {
+                if (button != null)
+                {
+                    TestCount(button);
+                }
+
+                string directoryPath = @"~/Content/Images/cards";
+                Session["ImageFileName"] = PickImageFromDirectory(directoryPath);
+                //ViewBag.ImagePath = Path.Combine(directoryPath, (string)Session["ImageFileName"]);
+                ViewBag.ImagePath = directoryPath + "/" + (string)Session["ImageFileName"];
+
+
+                return View();
+            }
+            else
+                //return View("TestResult");
+                return RedirectToAction("TestResult");
+
+        }
+
+        public void TestCount(string button)
+        {
                 switch (button)
                 {
 
@@ -80,13 +88,10 @@ namespace WisconsinTest.Controllers
                         break;
                     default:
                         break;
-                }
 
-                return View();
             }
-            else
-                return View("TestResult");
-        }*/
+        }
+       
 
         /*public ActionResult TestResult()
         {

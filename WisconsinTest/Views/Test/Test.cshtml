@@ -14,32 +14,30 @@
     <h2 style="text-align: center;"><strong>Test</strong></h2>
 
 
-    @using (Html.BeginForm("Test", "TestController", FormMethod.Post))
+    @using (Html.BeginForm("Test", "Test", FormMethod.Post))
     {
-    <h2 style="text-align: center;">
-        <button type="button" name="btnCircle" class="button" style="width: 250px; height: 250px">
-            <img src="~/Content/Images/circleTest.png" />
-        </button>
-        <button type="button" name="btnStar" class="button" style="width: 250px; height: 250px">
-            <img src="~/Content/Images/starTest.png" />
-        </button>
-        <button type="button" name="btnCross" class="button" style="width: 250px; height: 250px">
-            <img src="~/Content/Images/crossTest.png" />
-        </button>
-        <button type="button" name="btnRectangle" class="button" style="width: 250px; height: 250px">
-            <img src="~/Content/Images/rectangleTest.png" />
-        </button>
+        <h2 style="text-align: center;">
 
-        <!--<input type="image" name="btnStar" src="~/Content/Images/starTest.png" width="250" height="250" />
-    <input type="image" name="btnCircle" src="~/Content/Images/circleTest.png" width="250" height="250" />
-    <input type="image" name="btnCross" src="~/Content/Images/crossTest.png" width="250" height="250" />
-    <input type="image" name="btnRectangle" src="~/Content/Images/rectangleTest.png" width="250" height="250" />-->
-    </h2>
+            <a href="@Url.Action("Test",new {button="btnCircle"})">
+                <img src="~/Content/Images/circleTest.png" style="width: 250px; height: 250px;" />
+            </a>
+            <a href="@Url.Action("Test",new {button="btnStar"})">
+                <img src="~/Content/Images/starTest.png" style="width: 250px; height: 250px;" />
+            </a>
+            <a href="@Url.Action("Test",new {button="btnCross"})">
+                <img src="~/Content/Images/crossTest.png" style="width: 250px; height: 250px;" />
+            </a>
+            <a href="@Url.Action("Test",new {button="btnRectangle"})">
+                <img src="~/Content/Images/rectangleTest.png" style="width: 250px; height: 250px;" />
+            </a>
+
+        </h2>
     }
-    
+
+
     <h2 style="text-align: center;">
-        <img src=@ViewBag.ImagePath width="300" height="300" />
-   
+        <img src="@Url.Content(ViewBag.ImagePath)" width="300" height="300" />
+
         @ViewBag.LastChoiceResult
     </h2>
 </body>
