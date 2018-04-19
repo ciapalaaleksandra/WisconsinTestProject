@@ -204,7 +204,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\ResultsController.cs" />
+    <Compile Include="Controllers\SurveysController.cs" />
     <Compile Include="Helpers\Card.cs" />
     <Compile Include="Helpers\CardList.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -408,10 +408,15 @@
     <Content Include="Views\Psychologist\Index.cshtml" />
     <Content Include="Views\Test\StartTest.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
-    <Content Include="Views\Statistics\Results.cshtml" />
+    <Content Include="Views\Surveys\Create.cshtml" />
+    <Content Include="Views\Surveys\Delete.cshtml" />
+    <Content Include="Views\Surveys\Details.cshtml" />
+    <Content Include="Views\Surveys\Edit.cshtml" />
+    <Content Include="Views\Surveys\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Statistics\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
