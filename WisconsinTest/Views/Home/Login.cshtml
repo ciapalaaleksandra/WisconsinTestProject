@@ -1,7 +1,9 @@
 ﻿@model WisconsinTest.Models.Users
 @Styles.Render("~/Views/Shared/_Layout.cshtml")
+@*@Styles.Render("~/Views/Shared/MasterPage.cshtml")*@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -13,7 +15,6 @@
 </head>
 
     <body>
-        @Html.ActionLink("Zarejestruj psychologa", "PsychologistRegistration")
         @using (Html.BeginForm("Login", "Home", FormMethod.Post))
         {
             @Html.AntiForgeryToken()

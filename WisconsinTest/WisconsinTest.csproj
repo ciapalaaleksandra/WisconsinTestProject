@@ -327,6 +327,7 @@
     <Content Include="Views\Psychologist\Details.cshtml" />
     <Content Include="Views\Psychologist\Edit.cshtml" />
     <Content Include="Views\Psychologist\Index.cshtml" />
+    <Content Include="Views\Shared\MasterPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

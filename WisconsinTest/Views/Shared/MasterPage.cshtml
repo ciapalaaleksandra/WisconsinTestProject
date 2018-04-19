@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <h1> Test Wiscounsin</h1>
+    </header>
+
+    <nav>
+        <div>
+            @Html.ActionLink("Zarejestruj psychologa", "PsychologistRegistration")
+        </div>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer style="background-color:aquamarine;color:white;text-align:center"
+            <div>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </div>
+    </footer>
+</body>
+</html>
