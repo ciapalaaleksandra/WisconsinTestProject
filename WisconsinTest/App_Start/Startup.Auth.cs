@@ -58,11 +58,11 @@ namespace WisconsinTest
             //   appId: "",
             //   appSecret: "");
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = "7798138621-n4ibmc0h51b9g8ogfqp9o9cbkd2uc4gp.apps.googleusercontent.com",
-                ClientSecret = "NsuweN5rVNxXEaKxjLONsRxd"
-            });
+            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //{
+            //    ClientId = "",
+            //    ClientSecret = ""
+            //});
         }
     }
 }
