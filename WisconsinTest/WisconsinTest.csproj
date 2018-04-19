@@ -406,13 +406,17 @@
     <Content Include="Views\Psychologist\Details.cshtml" />
     <Content Include="Views\Psychologist\Edit.cshtml" />
     <Content Include="Views\Psychologist\Index.cshtml" />
-    <Content Include="Views\Test\StartTest.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Surveys\Create.cshtml" />
     <Content Include="Views\Surveys\Delete.cshtml" />
     <Content Include="Views\Surveys\Details.cshtml" />
     <Content Include="Views\Surveys\Edit.cshtml" />
     <Content Include="Views\Surveys\Index.cshtml" />
+=======
+    <Content Include="Views\Test\StartTest.cshtml" />
+    <Content Include="Views\Test\TestResult.cshtml" />
+>>>>>>> 6e756fa3cf4c0da706be7c83010d16def11f4671
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

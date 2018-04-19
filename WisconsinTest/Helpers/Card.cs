@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace wcst.Models
+namespace WiscounsinTest.Models
 {
     //klasa z własnościami karty
     public class Card
