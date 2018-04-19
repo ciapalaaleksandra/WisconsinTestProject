@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TestResult</title>
+</head>
+<body>
+    <div>
+        <h2 style="text-align: center;"><strong>Wyniki Testu</strong></h2>
+        <p style="text-align: center;"><strong>Liczba pr&oacute;b:</strong></p>
+        <p style="text-align: center;">@ViewBag.NumberofTrials</p>
+        <p style="text-align: center;"><strong>Liczba poprawnych:</strong></p>
+        <p style="text-align: center;">@ViewBag.TotalCorrect</p>
+        <p style="text-align: center;"><strong>Błędy perseweracyjne:</strong></p>
+        <p style="text-align: center;">@ViewBag.PerseverativeErrors</p>
+        <p style="text-align: center;"><strong>Błędy nieperseweracyjne:</strong></p>
+        <p style="text-align: center;">@ViewBag.NonPerseverativeErrors</p>
+        <p style="text-align: center;"><strong>Sekwencja reguł:</strong></p>
+        <p style="text-align: center;">@ViewBag.TestSequence</p>
+        <form method="post">
+            <label type="label" onclick="location.href='@Url.Action("Details","Psychologist")'">Zakończ</label>
+        </form>
+    </div>
+</body>
+</html>
