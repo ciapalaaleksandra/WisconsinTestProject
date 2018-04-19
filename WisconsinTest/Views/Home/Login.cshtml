@@ -5,42 +5,44 @@
 }
 
 <!DOCTYPE html>
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="7798138621-n4ibmc0h51b9g8ogfqp9o9cbkd2uc4gp.apps.googleusercontent.com" />
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
 </head>
 
-    <body>
-        @Html.ActionLink("Zarejestruj psychologa", "PsychologistRegistration")
-        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+<body>
+    @Html.ActionLink("Zarejestruj psychologa", "PsychologistRegistration")
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        if (@ViewBag.Error != null)
         {
-            @Html.AntiForgeryToken()
-            if (@ViewBag.Error != null)
-            {
-                <div style="color: red">
-                    <center>@ViewBag.Error</center>
-                </div>
-            }
-
-            <table align="center" cellpadding="2" cellspacing="2">
-                <tr align="center">
-
-                <tr>
-                    <td>Login:</td>
-                    <td>@Html.TextBoxFor(a => a.Login)</td>
-                </tr>
-                <tr>
-                    <td> Hasło:</td>
-                    <td> @Html.PasswordFor(a => a.Passowrd)</td>
-                </tr>
-
-
-            </table>
-            <br />
-            <center><input type="submit" value="Zaloguj" class="btn" /></center>
-
+            <div style="color: red">
+                <center>@ViewBag.Error</center>
+            </div>
         }
-    </body>
+
+        <table align="center" cellpadding="2" cellspacing="2">
+            <tr align="center">
+
+            <tr>
+                <td>Login:</td>
+                <td>@Html.TextBoxFor(a => a.Login)</td>
+            </tr>
+            <tr>
+                <td> Hasło:</td>
+                <td> @Html.PasswordFor(a => a.Passowrd)</td>
+            </tr>
+
+
+        </table>
+        <br />
+        <center><input type="submit" value="Zaloguj" class="btn" /></center>
+
+    }
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+</body>
 </html>
