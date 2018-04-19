@@ -30,6 +30,7 @@ namespace WisconsinTest.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            Session["PatientId"] = id.ToString();
             Patients patients = db.Patients.Find(id);
             if (patients == null)
             {

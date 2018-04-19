@@ -5,8 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Threading;
 using System.IO;
-
-
+using WisconsinTest.Models;
 
 namespace WisconsinTest.Controllers
 {
@@ -105,8 +104,31 @@ namespace WisconsinTest.Controllers
             ViewBag.TotalCorrect = Session["TotalCorrect"].ToString();
             ViewBag.PerseverativeErrors= Session["PerseverativeErrors"].ToString();
             ViewBag.NonPerseverativeErrors = Session["NonPerseverativeErrors"].ToString();
-
             string test = String.Join<int>(",", (List<int>)Session["ResultedRulesList"]);
+
+            string idPatientString = Session["PatientId"].ToString();
+            int idPatient = int.Parse(idPatientString);
+
+            using (WiscounsinTestDatabaseEntities db = new WiscounsinTestDatabaseEntities())
+            {
+                Surveys survey = new Surveys();
+                Results result = new Results();
+
+                survey.PatientId = idPatient;
+                survey.Date = DateTime.Today;
+
+                result.CorrectAnswers = Int32.Parse(ViewBag.TotalCorrect);
+                result.NonPerseveranceErrors = Int32.Parse(ViewBag.NonPerseverativeErrors);
+                result.NumberOfTries = Int32.Parse(ViewBag.NumberofTrials);
+                result.PerseverationErrors = Int32.Parse(ViewBag.PerseverativeErrors);
+                result.Rules = test;
+                
+
+                //if(db.Surveys.Any)
+                //result.SurveyId = if()
+            }
+
+            
             ViewBag.TestSequence = test;
             Session["NumberofTrials"] = 0;
             Session["TotalCorrect"] = 0;
