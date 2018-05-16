@@ -23,9 +23,11 @@
         <p style="text-align: center;">@ViewBag.NonPerseverativeErrors</p>
         <p style="text-align: center;"><strong>Sekwencja reguł:</strong></p>
         <p style="text-align: center;">@ViewBag.TestSequence</p>
-        <form method="post">
-            <label type="label" onclick="location.href='@Url.Action("Details","Psychologist")'">Zakończ</label>
-        </form>
+
+        <!--<form method="post">
+        <label type="label" onclick="location.href='@Url.Action("Details","Psychologist")'">Zakończ</label>
+        </form>-->
+        @Html.ActionLink("Zakończ", "Details", "Psychologist")
     </div>
 </body>
 </html>
