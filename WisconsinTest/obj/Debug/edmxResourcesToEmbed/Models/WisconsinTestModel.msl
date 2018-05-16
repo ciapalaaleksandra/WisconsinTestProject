@@ -42,15 +42,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Surveys">
-      <EntityTypeMapping TypeName="WiscounsinTestDatabaseModel.Surveys">
-        <MappingFragment StoreEntitySet="Surveys">
-          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
-          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="WiscounsinTestDatabaseModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -68,6 +59,15 @@
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="Passowrd" ColumnName="Passowrd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Surveys">
+      <EntityTypeMapping TypeName="WiscounsinTestDatabaseModel.Surveys">
+        <MappingFragment StoreEntitySet="Surveys">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -24,10 +24,12 @@
         <p style="text-align: center;"><strong>Sekwencja reguł:</strong></p>
         <p style="text-align: center;">@ViewBag.TestSequence</p>
 
+        <center><input type="button" value="Generuj pdf" onclick="location.href='@Url.Action("GetFile", "Test")'" class="btn" /></center>
+
         <!--<form method="post">
         <label type="label" onclick="location.href='@Url.Action("Details","Psychologist")'">Zakończ</label>
         </form>-->
-        @Html.ActionLink("Zakończ", "Details", "Psychologist")
+        @Html.ActionLink("Zakończ", "Details", "Psychologist", new { id = Int32.Parse(Session["PatientId"].ToString())}, null)
     </div>
 </body>
 </html>

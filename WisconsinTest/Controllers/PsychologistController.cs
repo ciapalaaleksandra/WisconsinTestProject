@@ -26,6 +26,7 @@ namespace WisconsinTest.Controllers
         // GET: Psychologist/Details/5
         public ActionResult Details(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -11,8 +11,7 @@ namespace WisconsinTest.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Psychologists
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,24 +22,11 @@ namespace WisconsinTest.Models
     
         public int PsychologistId { get; set; }
         public int UserId { get; set; }
-        [Required(ErrorMessage = "Nalezy podac imie.")]
-        [Display(Name = "Imie")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Nalezy podac nazwisko.")]
-        [Display(Name = "Nazwisko")]
         public string Surname { get; set; }
-        [Required(ErrorMessage = "Nalezy podac numer telefonu.")]
-        [Display(Name = "Numer telefonu")]
         public string PhoneNumber { get; set; }
-        [Required(ErrorMessage = "Nalezy podac adres.")]
-        [Display(Name = "Adres")]
         public string Address { get; set; }
-        [Required(ErrorMessage = "Nalezy podac date urodzenia.")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "(0:DD/mm/yyyy)")]
-        [Display(Name = "Data urodzenia")]
         public System.DateTime BirthDate { get; set; }
-        [Required(ErrorMessage = "Nalezy podac PESEL.")]
-        [Display(Name = "PESEL")]
         public string PESEL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
