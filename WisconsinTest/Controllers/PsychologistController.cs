@@ -74,6 +74,7 @@ namespace WisconsinTest.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Patients patients = db.Patients.Find(id);
             if (patients == null)
             {
