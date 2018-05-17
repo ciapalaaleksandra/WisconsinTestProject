@@ -5,21 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using System.Threading;
 using System.IO;
-
-
+using WisconsinTest.Models;
 
 namespace WisconsinTest.Controllers
 {
     public class TestController : Controller
     {
 
-        public ActionResult Start()
-        {
-            return View();
-        }
-
-            //UTWORZENIE SESJI:
-        public ActionResult Test()
+        public ActionResult StartTest()
         {
             // Session start parameters
             Session["Cards"] = WiscounsinTest.Models.CardList.GetCards();
@@ -32,61 +25,73 @@ namespace WisconsinTest.Controllers
             Session["PerseverativeErrors"] = 0;
             Session["NonPerseverativeErrors"] = 0;
 
-            string directoryPath = @"~/Content/Images/cards";
-            Session["ImageFileName"] = PickImageFromDirectory(directoryPath);
-            //ViewBag.ImagePath = Path.Combine(directoryPath, (string)Session["ImageFileName"]);
-            ViewBag.ImagePath = directoryPath+"/"+(string)Session["ImageFileName"];
-
             return View();
         }
 
-
-        // OBSŁUGA PRZYCISKÓW(KART):
-
-        /*public ActionResult Test(string button)
+        //UTWORZENIE SESJI:
+        public ActionResult Test(string button)
         {
-            if ((int)Session["NumberOfChanges"] <= 6)
+            if ((int)Session["NumberOfChanges"] <= 0)//6 ma byc
             {
-                switch (button)
+                if (button != null)
                 {
-
-                    case "btnCircle":
-                        var NumberofTrials = (int)Session["NumberofTrials"];
-                        NumberofTrials++;
-                        Session["NumberofTrials"] = NumberofTrials;
-                        CreateResultList((string)Session["ImageFileName"], "red", 1, "circle");
-                        ImageAction();
-                        break;
-                    case "btnRectangle":
-                        NumberofTrials = (int)Session["NumberofTrials"];
-                        NumberofTrials++;
-                        Session["NumberofTrials"] = NumberofTrials;
-                        CreateResultList((string)Session["ImageFileName"], "blue", 3, "rectangle");
-                        ImageAction();
-                        break;
-                    case "btnCross":
-                        NumberofTrials = (int)Session["NumberofTrials"];
-                        NumberofTrials++;
-                        Session["NumberofTrials"] = NumberofTrials;
-                        CreateResultList((string)Session["ImageFileName"], "yellow", 4, "cross");
-                        ImageAction();
-                        break;
-                    case "btnStar":
-                        NumberofTrials = (int)Session["NumberofTrials"];
-                        NumberofTrials++;
-                        Session["NumberofTrials"] = NumberofTrials;
-                        CreateResultList((string)Session["ImageFileName"], "green", 2, "star");
-                        ImageAction();
-                        break;
-                    default:
-                        break;
+                    TestCount(button);
                 }
+
+                string directoryPath = @"~/Content/Images/cards";
+                Session["ImageFileName"] = PickImageFromDirectory(directoryPath);
+                //ViewBag.ImagePath = Path.Combine(directoryPath, (string)Session["ImageFileName"]);
+                ViewBag.ImagePath = directoryPath + "/" + (string)Session["ImageFileName"];
+
 
                 return View();
             }
             else
-                return View("TestResult");
-        }*/
+                //return View("TestResult");
+                return RedirectToAction("TestResult");
+
+        }
+
+        public void TestCount(string button)
+        {
+            switch (button)
+            {
+
+                case "btnCircle":
+                    var NumberofTrials = (int)Session["NumberofTrials"];
+                    NumberofTrials++;
+                    Session["NumberofTrials"] = NumberofTrials;
+                    CreateResultList((string)Session["ImageFileName"], "red", 1, "circle");
+                    ImageAction();
+                    System.Media.SystemSounds.Question.Play();
+                    break;
+                case "btnRectangle":
+                    NumberofTrials = (int)Session["NumberofTrials"];
+                    NumberofTrials++;
+                    Session["NumberofTrials"] = NumberofTrials;
+                    CreateResultList((string)Session["ImageFileName"], "blue", 3, "rectangle");
+                    ImageAction();
+                    break;
+                case "btnCross":
+                    NumberofTrials = (int)Session["NumberofTrials"];
+                    NumberofTrials++;
+                    Session["NumberofTrials"] = NumberofTrials;
+                    CreateResultList((string)Session["ImageFileName"], "yellow", 4, "cross");
+                    ImageAction();
+                    break;
+                case "btnStar":
+                    NumberofTrials = (int)Session["NumberofTrials"];
+                    NumberofTrials++;
+                    Session["NumberofTrials"] = NumberofTrials;
+                    CreateResultList((string)Session["ImageFileName"], "green", 2, "star");
+                    ImageAction();
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
 
         /*public ActionResult TestResult()
         {
@@ -98,10 +103,42 @@ namespace WisconsinTest.Controllers
             Session["NumberofTrials"] = (int)Session["NumberofTrials"];
             ViewBag.NumberofTrials = Session["NumberofTrials"].ToString();
             ViewBag.TotalCorrect = Session["TotalCorrect"].ToString();
-            ViewBag.PerseverativeErrors= Session["PerseverativeErrors"].ToString();
+            ViewBag.PerseverativeErrors = Session["PerseverativeErrors"].ToString();
             ViewBag.NonPerseverativeErrors = Session["NonPerseverativeErrors"].ToString();
-
             string test = String.Join<int>(",", (List<int>)Session["ResultedRulesList"]);
+            string idPatientString = Session["PatientId"].ToString();
+            int idPatient = int.Parse(idPatientString);
+
+            //using (WiscounsinTestDatabaseEntities db = new WiscounsinTestDatabaseEntities())
+            //{
+            //    Surveys survey = new Surveys();
+            //    Results result = new Results();
+
+            //    survey.PatientId = idPatient;
+            //    survey.Date = DateTime.Today;
+            //    db.Surveys.Add(survey);
+            //    db.SaveChanges();
+
+            //    result.CorrectAnswers = ViewBag.TotalCorrect;
+            //    result.NonPerseveranceErrors = ViewBag.NonPerseverativeErrors;
+            //    result.NumberOfTries = ViewBag.NumberofTrials;
+            //    result.PerseverationErrors = ViewBag.PerseverativeErrors;
+            //    result.Rules = test;
+
+            //    List<Surveys> sList = db.Surveys.ToList();
+
+            //    if (sList.Count == 0)
+            //        result.SurveyId = 1;
+            //    else
+            //        result.SurveyId = sList.OrderBy(x => x.SurveyId).Select(x => x.SurveyId).FirstOrDefault();
+
+               
+            //    db.Results.Add(result);
+            //    db.SaveChanges();
+
+            //}
+
+
             ViewBag.TestSequence = test;
             Session["NumberofTrials"] = 0;
             Session["TotalCorrect"] = 0;
@@ -132,38 +169,38 @@ namespace WisconsinTest.Controllers
 
         private void ImageAction()
         {
-                if ((int)Session["CorrectAnswers"] == 5)
+            if ((int)Session["CorrectAnswers"] == 5)
+            {
+
+                int newRule = 0;
+                do
                 {
-
-                    int newRule = 0;
-                    do
-                    {
-                        Random rnd = new Random();
-                        newRule = rnd.Next(1, 4);
-                    }
-                    while (newRule == (int)Session["Rule"]);
-                    Session["Rule"] = newRule;
-                    var NumberOfChanges = (int)Session["NumberOfChanges"];
-                    NumberOfChanges++;
-                    Session["NumberOfChanges"] = NumberOfChanges;
-                    Session["CorrectAnswers"] = 0;
-                    var ResultedRulesList = (List<int>)Session["ResultedRulesList"];
-                    ResultedRulesList[ResultedRulesList.Count - 1] = ResultedRulesList[ResultedRulesList.Count - 1] * 10;
-                    Session["ResultedRulesList"] = ResultedRulesList;
+                    Random rnd = new Random();
+                    newRule = rnd.Next(1, 4);
                 }
+                while (newRule == (int)Session["Rule"]);
+                Session["Rule"] = newRule;
+                var NumberOfChanges = (int)Session["NumberOfChanges"];
+                NumberOfChanges++;
+                Session["NumberOfChanges"] = NumberOfChanges;
+                Session["CorrectAnswers"] = 0;
+                var ResultedRulesList = (List<int>)Session["ResultedRulesList"];
+                ResultedRulesList[ResultedRulesList.Count - 1] = ResultedRulesList[ResultedRulesList.Count - 1] * 10;
+                Session["ResultedRulesList"] = ResultedRulesList;
+            }
 
 
-                string directoryPath = @"~/Content/Images/cards";
-                Session["ImageFileName"] = PickImageFromDirectory(directoryPath);
-                //ViewBag.ImagePath = Path.Combine(directoryPath, (string)Session["ImageFileName"]);
-                ViewBag.ImagePath = directoryPath + "/" + (string)Session["ImageFileName"];
+            string directoryPath = @"~/Content/Images/cards";
+            Session["ImageFileName"] = PickImageFromDirectory(directoryPath);
+            //ViewBag.ImagePath = Path.Combine(directoryPath, (string)Session["ImageFileName"]);
+            ViewBag.ImagePath = directoryPath + "/" + (string)Session["ImageFileName"];
 
         }
 
         private void CreateResultList(string fileName, string color, int number, string shape)
         {
-            foreach (WiscounsinTest.Models.Card  c in (List<WiscounsinTest.Models.Card>)Session["Cards"])
-                //foreach (Card c in (List<Card>)Session["Cards"])
+            foreach (WiscounsinTest.Models.Card c in (List<WiscounsinTest.Models.Card>)Session["Cards"])
+            //foreach (Card c in (List<Card>)Session["Cards"])
             {
                 if (c.CardID == fileName)
                 {
@@ -195,6 +232,13 @@ namespace WisconsinTest.Controllers
                                         Session["ResultedRulesList"] = ResultedRulesList;
                                         Check(3);
                                     }
+                                    else
+                                    {
+                                        var ResultedRulesList = (List<int>)Session["ResultedRulesList"];
+                                        ResultedRulesList.Add(4);
+                                        Session["ResultedRulesList"] = ResultedRulesList;
+                                        Check(4);
+                                    }
                                 }
                             }
                             break;
@@ -223,6 +267,13 @@ namespace WisconsinTest.Controllers
                                         ResultedRulesList.Add(1);
                                         Session["ResultedRulesList"] = ResultedRulesList;
                                         Check(1);
+                                    }
+                                    else
+                                    {
+                                        var ResultedRulesList = (List<int>)Session["ResultedRulesList"];
+                                        ResultedRulesList.Add(4);
+                                        Session["ResultedRulesList"] = ResultedRulesList;
+                                        Check(4);
                                     }
                                 }
                             }
@@ -254,6 +305,13 @@ namespace WisconsinTest.Controllers
                                         Session["ResultedRulesList"] = ResultedRulesList;
                                         Check(2);
                                     }
+                                    else
+                                    {
+                                        var ResultedRulesList = (List<int>)Session["ResultedRulesList"];
+                                        ResultedRulesList.Add(4);
+                                        Session["ResultedRulesList"] = ResultedRulesList;
+                                        Check(4);
+                                    }
                                 }
                             }
                             break;
@@ -272,6 +330,8 @@ namespace WisconsinTest.Controllers
             if ((int)Session["Rule"] == resultedRule)
             {
                 ViewBag.LastChoiceResult = "Dobrze!";
+                System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\yes2.wav");
+                CorrectSound.Play();
                 var CorrectAnswers = (int)Session["CorrectAnswers"];
                 CorrectAnswers++;
                 Session["CorrectAnswers"] = CorrectAnswers;
@@ -282,6 +342,8 @@ namespace WisconsinTest.Controllers
             else
             {
                 ViewBag.LastChoiceResult = "Źle!";
+                System.Media.SoundPlayer WrongSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\no2.wav");
+                WrongSound.Play();
                 CheckError(resultedRule);
             }
         }

@@ -12,6 +12,7 @@
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Use64BitIISExpress />
     <IISExpressSSLPort>44390</IISExpressSSLPort>
 =======
@@ -19,10 +20,16 @@
     <Use64BitIISExpress />
     <IISExpressSSLPort>44391</IISExpressSSLPort>
 >>>>>>> 6e756fa3cf4c0da706be7c83010d16def11f4671
+=======
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+>>>>>>> Creating_test
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Controller_SelectedScaffolderID>ApiControllerWithContextScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Controller</Controller_SelectedScaffolderCategoryPath>
@@ -33,6 +40,9 @@
     <WebStackScaffolding_DbContextDialogWidth>600</WebStackScaffolding_DbContextDialogWidth>
 =======
 >>>>>>> 6e756fa3cf4c0da706be7c83010d16def11f4671
+=======
+    <ProjectView>ShowAllFiles</ProjectView>
+>>>>>>> Creating_test
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
