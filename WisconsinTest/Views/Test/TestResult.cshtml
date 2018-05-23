@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>TestResult</title>
 </head>
-<body>
+<!--<body>
     <div>
         <h2 style="text-align: center;"><strong>Wyniki Testu</strong></h2>
         <p style="text-align: center;"><strong>Liczba pr&oacute;b:</strong></p>
@@ -27,6 +27,49 @@
         <!--<form method="post">
         <label type="label" onclick="location.href='@Url.Action("Details","Psychologist")'">Zakończ</label>
         </form>-->
+@Html.ActionLink("Zakończ", "Details", "Psychologist")
+    </div>
+</body>-->
+
+<body>
+    <div class="py-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="display-1">Wyniki Testu</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <h1 class="">Liczba prób</h1>
+                    <p class="lead">@ViewBag.NumberofTrials</p>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <h1 class="">Liczba poprawnych odpowiedzi</h1>
+                    <p class="lead">@ViewBag.TotalCorrect</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="">Błędy perseweracyjne</h1>
+                    <p class="lead">@ViewBag.PerseverativeErrors</p>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="">Błędy nieperseweracyjne</h1>
+                    <p class="lead">@ViewBag.NonPerseverativeErrors</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="">Sekwencja reguł</h1>
+                    <p class="lead">@ViewBag.TestSequence</p>
+                </div>
+            </div>
+        </div>
         @Html.ActionLink("Zakończ", "Details", "Psychologist")
     </div>
 </body>

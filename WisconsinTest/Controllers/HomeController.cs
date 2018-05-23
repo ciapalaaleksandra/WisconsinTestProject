@@ -55,7 +55,7 @@ namespace WisconsinTest.Controllers
                     }
                 }
             }
-            ViewBag.Error = "Logowanie nie powiodlo sie.";
+            ViewBag.Error = "Logowanie nie powiodło się.";
             return View(u);
         }
 
@@ -82,7 +82,7 @@ namespace WisconsinTest.Controllers
                 }
             }
             else
-                ModelState.AddModelError("", "Uzytkownik o podanym loginie juz istnieje");
+                ModelState.AddModelError("", "Użytkownik o podanym loginie już istnieje");
 
             return View();
         }
