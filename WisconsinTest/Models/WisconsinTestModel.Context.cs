@@ -28,8 +28,8 @@ namespace WisconsinTest.Models
         public virtual DbSet<Patients> Patients { get; set; }
         public virtual DbSet<Psychologists> Psychologists { get; set; }
         public virtual DbSet<Results> Results { get; set; }
-        public virtual DbSet<Surveys> Surveys { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Surveys> Surveys { get; set; }
     }
 }
