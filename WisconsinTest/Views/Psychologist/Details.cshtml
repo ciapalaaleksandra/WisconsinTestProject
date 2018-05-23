@@ -5,6 +5,7 @@
 }
 
 <!DOCTYPE html>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <html>
 <head>
@@ -19,59 +20,136 @@
             <dt>
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Name)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Surname)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Surname)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.PESEL)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.PESEL)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Address)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Address)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.PhoneNumber)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.PhoneNumber)
             </dd>
-    
+
             <dt>
                 @Html.DisplayFor(model => model.BirthDate.Day) . @Html.DisplayFor(model => model.BirthDate.Month) . @Html.DisplayFor(model => model.BirthDate.Year)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.BirthDate)
             </dd>
-    
-    
+
+
         </dl>
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.PatientId })
         @Html.ActionLink("Back to List", "Index")
-        @Html.ActionLink("Start Test", "StartTest","Test")
+        @Html.ActionLink("Start Test", "StartTest", "Test")
 
     </p>
+
+    <div>
+        <table class="table">
+            <tr>
+                <th class="tg-us36">Numer próby</th>
+                <th class="tg-us36">Liczba prób</th>
+                <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
+                <th class="tg-us36">Liczba błędów perseweracyjnych</th>
+                <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
+            </tr>
+
+            @foreach (var item in Model.Surveys.Where(x => x.PatientId == Model.PatientId))
+            {
+                foreach (var result in item.Results.Where(x => x.SurveyId == item.SurveyId))
+                {
+                    <tr>
+                        <td align="center">
+                            @Html.DisplayFor(modelitem => item.SurveyId)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.NumberOfTries)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.CorrectAnswers)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.PerseverationErrors)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+                        </td>
+                    </tr>}
+            }
+            <tr>
+                <th class="tg-us36">Pokaż na wykresie:</th>
+                <th><input type="checkbox"></th>
+                <th><input type="checkbox"></th>
+                <th><input type="checkbox"></th>
+                <th><input type="checkbox"></th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="chartContainer"></div>
+    <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    title: {
+                            text: "Statystyki"
+                    },
+                    axisY: {
+                            includeZero: false
+                    },
+                    toolTip: {
+                            shared: true
+                    },
+                data: [{
+                    type: "line",
+                    dataPoints: [
+                        { x: 10, y: 71 },
+                        { x: 20, y: 55 },
+                        { x: 30, y: 50 },
+                        { x: 40, y: 65 },
+                        { x: 50, y: 95 },
+                        { x: 60, y: 68 },
+                        { x: 70, y: 28 },
+                        { x: 80, y: 34 },
+                        { x: 90, y: 14 }
+                    ] }]
+    });
+    chart.render();
+
+    }
+    </script>
+
+
 </body>
 </html>

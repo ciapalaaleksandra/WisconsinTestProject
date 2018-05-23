@@ -26,8 +26,13 @@ namespace WisconsinTest.Controllers
         // GET: Psychologist/Details/5
         public ActionResult Details(int? id)
         {
+            List<DataPoint> dataPoints1 = new List<DataPoint>();
+            List<DataPoint> dataPoints2 = new List<DataPoint>();
+            List<DataPoint> dataPoints3 = new List<DataPoint>();
+            List<DataPoint> dataPoints4 = new List<DataPoint>();
+            
 
-            if (id == null)
+                if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -39,6 +44,7 @@ namespace WisconsinTest.Controllers
             }
             return View(patients);
         }
+
 
         // GET: Psychologist/Create
         public ActionResult Create()
