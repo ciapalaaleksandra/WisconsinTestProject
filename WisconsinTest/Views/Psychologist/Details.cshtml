@@ -97,6 +97,92 @@
             </div>
         </div>
         }
+        <div>
+            <table class="table">
+                <tr>
+                    <th class="tg-us36">Numer próby</th>
+                    <th class="tg-us36">Liczba prób</th>
+                    <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
+                    <th class="tg-us36">Liczba błędów perseweracyjnych</th>
+                    <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
+                </tr>
+
+                @foreach (var item in Model.Surveys.Where(x => x.PatientId == Model.PatientId))
+            {
+                foreach (var result in item.Results.Where(x => x.SurveyId == item.SurveyId))
+                {
+                        <tr>
+                            <td align="center">
+                                @Html.DisplayFor(modelitem => item.Date)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.NumberOfTries)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.CorrectAnswers)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.PerseverationErrors)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+                            </td>
+                        </tr>}
+            }
+                <tr>
+                    <th class="tg-us36">Pokaż na wykresie:</th>
+                    <th><input type="checkbox"></th>
+                    <th><input type="checkbox"></th>
+                    <th><input type="checkbox"></th>
+                    <th><input type="checkbox"></th>
+                </tr>
+            </table>
+        </div>
+
+        <div id="chartContainer"></div>
+        <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    title: {
+                            text: "Statystyki"
+                    },
+                    axisY: {
+                            includeZero: false
+                    },
+                    toolTip: {
+                            shared: true
+                    },
+                data: [{
+                    type: "line",
+                    name: "Liczba prób",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints1)},
+                    {
+                    type: "line",
+                    name: "Liczba Prawidłowych odpowiedzi",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints2)},
+                    {
+                    type: "line",
+                    name: "Liczba błędów perseweracyjnych",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints3)},
+                    {
+                    type: "line",
+                    name: "Liczba błędów nieperseweracyjnych",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints4)},
+                     ]
+    });
+    chart.render();
+
+    }
+        </script>
     </body>
 
 </html>
