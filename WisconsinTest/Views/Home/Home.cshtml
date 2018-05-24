@@ -1,0 +1,60 @@
+﻿    @{
+        Layout = "~/Views/Shared/_WSCTLayout.cshtml";
+    }
+
+    <!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Home Page</title>
+        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="display-1 text-center">TEST WISCONSIN</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                    <button type="button" class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("Login", "Home") + "'");">Logowanie</button>
+                    <button type="button" class="btn btn-info" onclick="@("window.location.href='" + @Url.Action("PsychologistRegistration", "Home") + "'");">Rejestracja</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-5 text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="">Na czym polega test?</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead">
+                            W tym teście musisz przypasować wyświetloną kartę do jednej z czterech, zaprezentowanych powyżej. Po kliknięciu jednej z kart, pojawi się informacja, czy karta została dopasowana dobrze, czy źle. Dzięki tej informacji musisz zgadnąć, jaka jest
+                            reguła dopasowania kart, czy jest to kolor, liczba, czy kształt na karcie. Reguły ulegają zmianie, więc po każdej zmianie trzeba ją na nowo odgadnąć. Przykładowy ekran widoczny po rozpoczęciu testu został zaprezentowany na dole.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="img-fluid d-block" src="~/Content/Images/instr.png">
+                        <!--<img src="~/Content/Images/instr.png" style="width: 250px; height: 250px;" />-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+</html>
