@@ -218,6 +218,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Patients.cs">
@@ -230,9 +231,6 @@
       <DependentUpon>WisconsinTestModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Surveys.cs">
-      <DependentUpon>WisconsinTestModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>WisconsinTestModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
@@ -257,7 +255,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Audio\Footstep_on_Cracked_Glass.mp3" />
+    <Content Include="Content\Audio\no1.wav" />
+    <Content Include="Content\Audio\no2.wav" />
+    <Content Include="Content\Audio\no3.wav" />
+    <Content Include="Content\Audio\trump.wav" />
+    <Content Include="Content\Audio\yes1.wav" />
+    <Content Include="Content\Audio\yes2.wav" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\cards\circle1b.png" />
@@ -368,7 +371,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -381,7 +386,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -412,6 +417,7 @@
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Test\StartTest.cshtml" />
     <Content Include="Views\Test\TestResult.cshtml" />
+    <Content Include="Views\Shared\_WSCTLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

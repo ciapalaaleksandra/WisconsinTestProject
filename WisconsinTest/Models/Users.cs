@@ -23,7 +23,13 @@ namespace WisconsinTest.Models
         public int UserId { get; set; }
         public string Login { get; set; }
         public string Passowrd { get; set; }
-    
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string PESEL { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+        public System.DateTime BirthDate { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Psychologists> Psychologists { get; set; }
     }

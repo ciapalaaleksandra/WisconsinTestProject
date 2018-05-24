@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WisconsinTest.Models;
+using Newtonsoft.Json;
 
 namespace WisconsinTest.Controllers
 {
@@ -26,8 +27,13 @@ namespace WisconsinTest.Controllers
         // GET: Psychologist/Details/5
         public ActionResult Details(int? id)
         {
+            List<DataPoint> dataPoints1 = new List<DataPoint>();
+            
+            List<DataPoint> dataPoints2 = new List<DataPoint>();
+            List<DataPoint> dataPoints3 = new List<DataPoint>();
+            List<DataPoint> dataPoints4 = new List<DataPoint>();
 
-            if (id == null)
+                if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -37,8 +43,23 @@ namespace WisconsinTest.Controllers
             {
                 return HttpNotFound();
             }
+            foreach (var item in db.Surveys.Where(x => x.PatientId == id))
+            {
+                foreach(var results in db.Results.Where(x => x.SurveyId == item.SurveyId))
+                {
+                    dataPoints1.Add(new DataPoint(item.Date.ToString(), double.Parse(results.NumberOfTries)));
+                    dataPoints2.Add(new DataPoint(item.Date.ToString(), double.Parse(results.CorrectAnswers)));
+                    dataPoints3.Add(new DataPoint(item.Date.ToString(), double.Parse(results.PerseverationErrors)));
+                    dataPoints4.Add(new DataPoint(item.Date.ToString(), double.Parse(results.NonPerseveranceErrors)));
+                }
+            }
+            ViewBag.DataPoints1 = JsonConvert.SerializeObject(dataPoints1);
+            ViewBag.DataPoints2 = JsonConvert.SerializeObject(dataPoints2);
+            ViewBag.DataPoints3 = JsonConvert.SerializeObject(dataPoints3);
+            ViewBag.DataPoints4 = JsonConvert.SerializeObject(dataPoints4);
             return View(patients);
         }
+
 
         // GET: Psychologist/Create
         public ActionResult Create()

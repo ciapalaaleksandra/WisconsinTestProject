@@ -1,8 +1,6 @@
-﻿@{ 
-    var endTime = DateTime.UtcNow.AddSeconds(10);
-    var remainingTime = TimeSpan.FromTicks(endTime.Ticks - DateTime.UtcNow.Ticks).TotalSeconds;
-}
+﻿
 @{
+    //Layout = "~/Views/Shared/_WSCTLayout.cshtml";
     Layout = null;
 }
 
@@ -11,12 +9,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
     <title>Test</title>
 </head>
-<body>
+
+<!--<body>
     <h2 style="text-align: center;"><strong>Test</strong></h2>
-    Pozostały czas: <span id="minRemaining"></span>:<span id="secRemaining"></span>
-     @using (Html.BeginForm("Test", "Test", FormMethod.Post))
+
+
+    @using (Html.BeginForm("Test", "Test", FormMethod.Post))
     {
         <h2 style="text-align: center;">
 
@@ -35,43 +36,76 @@
 
         </h2>
     }
+    <h2 style="text-align: center;">
+        <img src="@Url.Content(ViewBag.ImagePath)" width="300" height="300" />
 
+        @ViewBag.LastChoiceResult
+    </h2>
+</body>-->
+
+
+<body class="text-center">
+    <!--<div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="display-4">Test</h3>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="py-5">
+        <div class="container">
+            @using (Html.BeginForm("Test", "Test", FormMethod.Post))
+            {
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-lg-3 col-xl-3 col-6">
+                        <a href="@Url.Action("Test",new {button="btnCircle"})">
+                            <img src="~/Content/Images/circleTest.png" style="width: 250px; height: 250px;" />
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-6 col-sm-6 col-lg-3 col-xl-3">
+                        <a href="@Url.Action("Test",new {button="btnStar"})">
+                            <img src="~/Content/Images/starTest.png" style="width: 250px; height: 250px;" />
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6 col-lg-3 col-xl-3">
+                        <a href="@Url.Action("Test",new {button="btnCross"})">
+                            <img src="~/Content/Images/crossTest.png" style="width: 250px; height: 250px;" />
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-6 col-sm-6 col-lg-3 col-xl-3">
+                        <a href="@Url.Action("Test",new {button="btnRectangle"})">
+                            <img src="~/Content/Images/rectangleTest.png" style="width: 250px; height: 250px;" />
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <!--<div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-12 col-sm-12 col-xl-6">
+                    <h2 style="text-align: center;">
+                        <img src="@Url.Content(ViewBag.ImagePath)" width="300" height="300" />
+                    </h2>
+                </div>
+                <div class="col-md-6 col-12 col-sm-12 col-lg-6 col-xl-6">
+                    <h2>
+                        @ViewBag.LastChoiceResult
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>-->
 
     <h2 style="text-align: center;">
         <img src="@Url.Content(ViewBag.ImagePath)" width="300" height="300" />
 
         @ViewBag.LastChoiceResult
     </h2>
-    <script>
-        var remSeconds = @remainingTime;
-        var secondsCounter = remSeconds % 60;
-        function formatNumber(number)
-        {
-            if(number<10) return '0'+ number;
-            else return '' + number;
-        }
 
-        function startTick()
-        {
-            document.getElementById('secRemaining').innerText = formatNumber(secondsCounter);
-            document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds/60));
-
-            var _tick = setInterval(function()
-            {
-                    remSeconds = remSeconds-1;
-                    secondsCounter = secondsCounter-1;
-                    document.getElementById('secRemaining').innerText = formatNumber(secondsCounter);
-                    document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds/60));
-
-                    if(secondsCounter==0)
-                    {
-                        secondsCounter = 60;
-                        window.location.href = '@Url.Action("Test", new {button=""})';
-                    }
-            }, 1000);
-
-        }
-        startTick();
-    </script>
 </body>
+
 </html>

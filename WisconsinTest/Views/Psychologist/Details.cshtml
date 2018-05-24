@@ -1,77 +1,188 @@
-﻿ @model WisconsinTest.Models.Patients
+﻿@model WisconsinTest.Models.Patients
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_WSCTLayout.cshtml";
 }
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Patients</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Surname)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Surname)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.PESEL)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.PESEL)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Address)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Address)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.PhoneNumber)
-            </dd>
-    
-            <dt>
-                @Html.DisplayFor(model => model.BirthDate.Day) . @Html.DisplayFor(model => model.BirthDate.Month) . @Html.DisplayFor(model => model.BirthDate.Year)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.BirthDate)
-            </dd>
-    
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.PatientId })
-        @Html.ActionLink("Back to List", "Index")
-        @Html.ActionLink("Start Test", "StartTest","Test")
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <title>Details</title>
+    </head>
 
-    </p>
-</body>
+
+    <body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+
+
+        @using (Html.BeginForm())
+        {
+
+        @Html.AntiForgeryToken()
+        <div class="align-self-center">
+            <div class="container">
+                <div class="row align-self-center">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 text-left align-self-center">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-secondary" onclick="@("window.location.href='" + @Url.Action("Index", "Psychologist") + "'");">
+                                            <i class="d-block  fa fa-5x fa-arrow-circle-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="py-3">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="pagination">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="@Url.Action("StartTest", "Test")">
+                                                        <i class="fa d-inline fa-lg fa-bookmark-o"></i> Rozpocznij Test
+                                                    </a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="@Url.Action("Edit", "Psychologist", new { id = Model.PatientId })">
+                                                        <i class="fa d-inline fa-lg fa-pencil"></i> Edytuj dane
+                                                    </a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="@Url.Action("Delete", "Psychologist", new { id = Model.PatientId })">
+                                                        <i class="fa d-inline fa-lg fa-ban"></i> Usuń pacjenta
+                                                    </a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <i class="fa d-inline fa-lg fa-area-chart"></i> Statystyki
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="row">
+                                </div>
+                                <i class="d-block  fa fa-5x fa-user-circle my-1"></i>
+                                <h1 class="my-1">@Html.DisplayFor(model => model.Name)</h1>
+                                <h1 class="my-1">@Html.DisplayFor(model => model.Surname)</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class=" my-2">Pesel</h5>
+                        <p class="">@Html.DisplayFor(model => model.PESEL)</p>
+                        <h5 class="my-2">Adres</h5>
+                        <p class="">@Html.DisplayFor(model => model.Address)</p>
+                        <h5 class="my-2">Numer telefonu</h5>
+                        <p class="">@Html.DisplayFor(model => model.PhoneNumber)</p>
+                        <h5 class="my-2">Data urodzenia</h5>
+                        <p class="">@Html.DisplayFor(model => model.BirthDate)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+        <div>
+            <table class="table">
+                <tr>
+                    <th class="tg-us36">Numer próby</th>
+                    <th class="tg-us36">Liczba prób</th>
+                    <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
+                    <th class="tg-us36">Liczba błędów perseweracyjnych</th>
+                    <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
+                </tr>
+
+                @foreach (var item in Model.Surveys.Where(x => x.PatientId == Model.PatientId))
+            {
+                foreach (var result in item.Results.Where(x => x.SurveyId == item.SurveyId))
+                {
+                        <tr>
+                            <td align="center">
+                                @Html.DisplayFor(modelitem => item.Date)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.NumberOfTries)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.CorrectAnswers)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.PerseverationErrors)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+                            </td>
+                        </tr>}
+            }
+                <tr>
+                    <th class="tg-us36">Pokaż na wykresie:</th>
+                    <th><input type="checkbox"></th>
+                    <th><input type="checkbox"></th>
+                    <th><input type="checkbox"></th>
+                    <th><input type="checkbox"></th>
+                </tr>
+            </table>
+        </div>
+
+        <div id="chartContainer"></div>
+        <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    title: {
+                            text: "Statystyki"
+                    },
+                    axisY: {
+                            includeZero: false
+                    },
+                    toolTip: {
+                            shared: true
+                    },
+                data: [{
+                    type: "line",
+                    name: "Liczba prób",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints1)},
+                    {
+                    type: "line",
+                    name: "Liczba Prawidłowych odpowiedzi",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints2)},
+                    {
+                    type: "line",
+                    name: "Liczba błędów perseweracyjnych",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints3)},
+                    {
+                    type: "line",
+                    name: "Liczba błędów nieperseweracyjnych",
+                    showInLegend: true,
+                    dataPoints:
+                    @Html.Raw(ViewBag.DataPoints4)},
+                     ]
+    });
+    chart.render();
+
+    }
+        </script>
+    </body>
+
 </html>
