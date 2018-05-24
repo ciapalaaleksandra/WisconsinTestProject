@@ -10,10 +10,11 @@ namespace WisconsinTest.Controllers
 {
     public class HomeController : Controller
     {
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        public ActionResult Home()
+        {
+            return View();
+        }
+
 
         //public ActionResult About()
         //{
@@ -55,7 +56,7 @@ namespace WisconsinTest.Controllers
                     }
                 }
             }
-            ViewBag.Error = "Logowanie nie powiodlo sie.";
+            ViewBag.Error = "Logowanie nie powiodło się.";
             return View(u);
         }
 
@@ -79,10 +80,11 @@ namespace WisconsinTest.Controllers
                     db.Psychologists.Add(psychologist);
                     db.SaveChanges();
                     return RedirectToAction("Login");
+                    //return Redirect(Url.Action("Index", "Psychologist"));
                 }
             }
             else
-                ModelState.AddModelError("", "Uzytkownik o podanym loginie juz istnieje");
+                ModelState.AddModelError("", "Użytkownik o podanym loginie już istnieje");
 
             return View();
         }

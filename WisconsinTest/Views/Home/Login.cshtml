@@ -1,7 +1,7 @@
 ﻿@model WisconsinTest.Models.Users
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_WSCTLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -10,10 +10,23 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 
+<body class="text-center">
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="">Zaloguj się</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
     <body>
-        @Html.ActionLink("Zarejestruj psychologa", "PsychologistRegistration")
         @using (Html.BeginForm("Login", "Home", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
@@ -24,23 +37,75 @@
                 </div>
             }
 
-            <table align="center" cellpadding="2" cellspacing="2">
-                <tr align="center">
-
-                <tr>
-                    <td>Login:</td>
-                    <td>@Html.TextBoxFor(a => a.Login)</td>
-                </tr>
-                <tr>
-                    <td> Hasło:</td>
-                    <td> @Html.PasswordFor(a => a.Passowrd)</td>
-                </tr>
-
-
-            </table>
-            <br />
-            <center><input type="submit" value="Zaloguj" class="btn" /></center>
+            <div class="py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="mx-auto col-9 col-md-7 col-xl-5 col-sm-8 col-lg-6">
+                            <form class="">
+                                <div class="form-group">
+                                    <label>Login</label>
+                                    @Html.EditorFor(a => a.Login, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                <div class="form-group w-100">
+                                    <label>Hasło</label>
+                                    @Html.EditorFor(a => a.Passowrd, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                </div>
+                            </form>
+                            <p class="font-small blue-text d-flex justify-content-end">
+                                Zapomniałeś
+                                <a href="#" class="blue-text ml-1"> Hasła?</a>
+                            </p>
+                            <!--<a class="btn btn-primary" type="submit" href="#">Zaloguj</a>-->
+                            <button type="submit" class="btn btn-primary">Zaloguj</button>
+                            <!--<center><input type="submit" value="Zaloguj" class="btn" /></center>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         }
     </body>
+
+    <body>
+        <div class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <form class="">
+                            <div class="form-group">
+                                <label>Zaloguj &nbsp;się przez:</label>
+                            </div>
+                            <div class="row w-25 d-inline-flex">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-secondary">
+                                        <i class="d-block  fa fa-3x fa-facebook"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-secondary">
+                                       <i class="d-block  fa fa-3x fa-google"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="form-gradient"></section>
+        <section class="form-elegant">
+            <!--Form without header-->
+            <div class="card">
+                <!--Footer-->
+                <div class="modal-footer mx-5 pt-3 mb-1">
+                    <p class="font-small grey-text d-flex justify-content-end">
+                        Nie masz konta?
+                        <a href="#" class="blue-text ml-1">  @Html.ActionLink("Zarejestruj się", "PsychologistRegistration")</a>
+                    </p>
+                </div>
+            </div>
+            <!--/Form without header-->
+        </section>
+    </body>
+
 </html>

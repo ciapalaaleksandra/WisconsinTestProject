@@ -1,28 +1,45 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_WSCTLayout.cshtml";
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     <title>StartTest</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body class="text-center">
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="display-4">Test Sortowania Wiscounsin</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="lead">Test sortowania kart Wisconsin jest narzedziem wykorzystywanym przez psychologów w celu okreslenia zdolnosci myslenia abstrakcyjnego, rozumowania oraz zmiany nastawien pacjenta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a class="btn btn-primary" href="#" onclick="location.href='@Url.Action("Test","Test")'">Rozpocznij Test </a>
+                    <form method="post"></form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <h2 style="text-align: center;"><strong>Test Sortowania Wiscounsin</strong></h2>
-
-    <p>
-        Test sortowania kart Wisconsin jest narzedziem wykorzystywanym przez psychologów
-        w celu okreslenia zdolnosci myslenia abstrakcyjnego, rozumowania oraz zmiany
-        nastawien pacjenta.
-    </p>
-
-    <form method="post">
-        <button type="button" onclick="location.href='@Url.Action("Test","Test")'">START</button>
-    </form>
 
 </body>
 </html>
