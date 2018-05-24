@@ -12,6 +12,7 @@ namespace WisconsinTest.Controllers
     public class TestController : Controller
     {
 
+        //UTWORZENIE SESJI:
         public ActionResult StartTest()
         {
             // Session start parameters
@@ -29,7 +30,6 @@ namespace WisconsinTest.Controllers
         }
 
 
-        //UTWORZENIE SESJI:
         public ActionResult Test(string button)
         {
             if ((int)Session["NumberOfChanges"] <= 0)//6 ma byc
@@ -331,7 +331,7 @@ namespace WisconsinTest.Controllers
             if ((int)Session["Rule"] == resultedRule)
             {
                 ViewBag.LastChoiceResult = "Dobrze!";
-                System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\yes2.wav");
+                System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(Server.MapPath("~/Content/Audio/yes2.wav"));         
                 CorrectSound.Play();
                 var CorrectAnswers = (int)Session["CorrectAnswers"];
                 CorrectAnswers++;
@@ -343,7 +343,7 @@ namespace WisconsinTest.Controllers
             else
             {
                 ViewBag.LastChoiceResult = "Źle!";
-                System.Media.SoundPlayer WrongSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\no2.wav");
+                System.Media.SoundPlayer WrongSound = new System.Media.SoundPlayer(Server.MapPath("~/Content/Audio/no3.wav"));
                 WrongSound.Play();
                 CheckError(resultedRule);
             }

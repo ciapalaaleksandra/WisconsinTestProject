@@ -1,7 +1,7 @@
 ﻿@model WisconsinTest.Models.Patients
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_WSCTLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -10,79 +10,63 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Delete</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
+
 <body>
-    <h3>Are you sure you want to delete this?</h3>
-    <div>
-        <h4>Patients</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Surname)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Surname)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.PESEL)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.PESEL)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Address)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Address)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.PhoneNumber)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.BirthDate)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.BirthDate)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Psychologists.Name)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Psychologists.Name)
-            </dd>
-    
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+    <div class="align-self-center">
+        <div class="container">
+            <div class="row align-self-center">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 text-left align-self-center">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-secondary" onclick="@("window.location.href='" + @Url.Action("Index", "Psychologist") + "'");">
+                                        <i class="d-block  fa fa-5x fa-arrow-circle-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+                            <h5 class="text-danger p-4">Czy na pewno chcesz usunąć wszystkie dane tego pacjenta?</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
-        }
+        </div>
     </div>
+    <div class="p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="p-3">@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.Surname)</h1>
+                    <!--<h1 class="text-center p-1">@Html.DisplayFor(model => model.Surname)</h1>-->
+                    <h5 class="p-2 mx-1">Pesel</h5>
+                    <p class="mx-2">@Html.DisplayFor(model => model.PESEL)</p>
+                    <h5 class="p-2 mx-1">Adres</h5>
+                    <p class="mx-2">@Html.DisplayFor(model => model.Address)</p>
+                    <h5 class="p-2 mx-1">Numer telefonu</h5>
+                    <p class="mx-2">@Html.DisplayFor(model => model.PhoneNumber)</p>
+                    <h5 class="p-2 mx-1">Data urodzenia</h5>
+                    <p class="mx-2">@Html.DisplayFor(model => model.BirthDate)</p>
+                </div>
+            </div>
+        </div>
+
+
+        @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container p-3">
+            <button type="submit" class="btn btn-primary">Usuń</button>
+        </div>
+}
+    </div>
+
 </body>
+
+
 </html>
