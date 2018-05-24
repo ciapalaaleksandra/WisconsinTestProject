@@ -6,7 +6,8 @@
 }
 
 <!DOCTYPE html>
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="7798138621-n4ibmc0h51b9g8ogfqp9o9cbkd2uc4gp.apps.googleusercontent.com">
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -68,6 +69,8 @@
     </body>
 
     <body>
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
         <div class="py-5">
             <div class="container">
                 <div class="row">
@@ -77,15 +80,20 @@
                                 <label>Zaloguj &nbsp;się przez:</label>
                             </div>
                             <div class="row w-25 d-inline-flex">
-                                <div class="col-md-6">
+                                @*<div class="col-md-6">
+            <button type="button" class="btn btn-secondary">
+                <i class="d-block  fa fa-3x fa-facebook"></i>
+            </button>
+        </div>*@
+                                @*<div class="g-signin2" data-onsuccess="onSignIn">
                                     <button type="button" class="btn btn-secondary">
-                                        <i class="d-block  fa fa-3x fa-facebook"></i>
+                                        <i class="d-block  fa fa-3x fa-google"></i>
                                     </button>
-                                </div>
-                                <div class="col-md-6">
-                                    <button type="button" class="btn btn-secondary">
-                                       <i class="d-block  fa fa-3x fa-google"></i>
-                                    </button>
+                                </div>*@
+                                <div class="col-md-4">
+                                    <section id="socialLoginForm">
+                                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                                    </section>
                                 </div>
                             </div>
                         </form>
@@ -106,7 +114,7 @@
                 </div>
             </div>
             <!--/Form without header-->
-        </section>
+        </section>}
     </body>
 
 </html>
