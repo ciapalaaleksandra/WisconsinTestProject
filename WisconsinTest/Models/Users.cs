@@ -11,7 +11,8 @@ namespace WisconsinTest.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,16 +20,35 @@ namespace WisconsinTest.Models
         {
             this.Psychologists = new HashSet<Psychologists>();
         }
-    
+
         public int UserId { get; set; }
+        [Required(ErrorMessage = "Nalezy podac login.", AllowEmptyStrings = false)]
+        [Display(Name = "Login")]
         public string Login { get; set; }
+        [Required(ErrorMessage = "Nalezy podac haslo.", AllowEmptyStrings = false)]
+        [DataType(DataType.Password)]
+        [MinLength(6, ErrorMessage = "Haslo powinno skladac sie z minimum 6 znakow.")]
+        [Display(Name = "Haslo")]
         public string Passowrd { get; set; }
+        [Required(ErrorMessage = "Nalezy podac imiê.")]
+        [Display(Name = "Imie")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Nalezy podac nazwisko.")]
+        [Display(Name = "Nazwisko")]
         public string Surname { get; set; }
-        public string PESEL { get; set; }
-        public string Address { get; set; }
+        [Required(ErrorMessage = "Nalezy podac numer telefonu.")]
+        [Display(Name = "Numer telefonu")]
         public string PhoneNumber { get; set; }
+        [Required(ErrorMessage = "Nalezy podac adres.")]
+        [Display(Name = "Adres")]
+        public string Address { get; set; }
+        [Required(ErrorMessage = "Nalezy podac date urodzenia.")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "(0:DD/mm/yyyy)")]
+        [Display(Name = "Data urodzenia")]
         public System.DateTime BirthDate { get; set; }
+        [Required(ErrorMessage = "Nalezy podac PESEL.")]
+        [Display(Name = "PESEL")]
+        public string PESEL { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Psychologists> Psychologists { get; set; }
