@@ -12,6 +12,7 @@ namespace WisconsinTest.Controllers
     {
         public ActionResult Home()
         {
+            Session["LogedUserID"] = "";
             return View();
         }
 

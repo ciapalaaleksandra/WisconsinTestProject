@@ -35,7 +35,17 @@ namespace WisconsinTest.Controllers
         {
             if ((int)Session["NumberOfChanges"] <= 0)//6 ma byc
             {
-                if (button != null)
+                if (button == null)
+                {
+                    var NumberofTrials = (int)Session["NumberofTrials"];
+                    if (NumberofTrials != 0)
+                    {
+                        NumberofTrials++;
+                        Session["NumberofTrials"] = NumberofTrials;
+                    }
+                    
+                }
+                else
                 {
                     TestCount(button);
                 }

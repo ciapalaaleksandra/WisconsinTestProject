@@ -21,7 +21,7 @@
 <!--<body>
     <h2 style="text-align: center;"><strong>Test</strong></h2>
 
-
+    
     @using (Html.BeginForm("Test", "Test", FormMethod.Post))
     {
         <h2 style="text-align: center;">
@@ -62,6 +62,9 @@
             </div>
         </div>
     </div>-->
+    <button type="button" class="btn btn-primary p-2 m-2" onclick="@("window.location.href='" + @Url.Action("Details", "Psychologist", new { id = Session["PatientId"] })  + "'");">
+        Zakończ test
+    </button>
     <div class="py-5">
         <div class="container">
             Pozostały czas:

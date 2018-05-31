@@ -58,11 +58,11 @@
                                                         <i class="fa d-inline fa-lg fa-ban"></i> Usuń pacjenta
                                                     </a>
                                                 </li>
-                                                <li class="page-item">
+                                                @*<li class="page-item">
                                                     <a class="page-link" href="#">
                                                         <i class="fa d-inline fa-lg fa-area-chart"></i> Statystyki
                                                     </a>
-                                                </li>
+                                                </li>*@
                                             </ul>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@
                         <h5 class="my-2">Numer telefonu</h5>
                         <p class="">@Html.DisplayFor(model => model.PhoneNumber)</p>
                         <h5 class="my-2">Data urodzenia</h5>
-                        <p class="">@Html.DisplayFor(model => model.BirthDate)</p>
+                        <p class="">@Html.DisplayFor(model=> model.BirthDate.Day) . @Html.DisplayFor(model => model.BirthDate.Month) . @Html.DisplayFor(model => model.BirthDate.Year)</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                 {
                         <tr>
                             <td align="center">
-                                @Html.DisplayFor(modelitem => item.Date)
+                                @Html.DisplayFor(modelItem => item.Date.Day) . @Html.DisplayFor(modelItem =>item.Date.Month) . @Html.DisplayFor(modelItem => item.Date.Year)
                             </td>
                             <td align="center">
                                 @Html.DisplayFor(modelItem => result.NumberOfTries)
