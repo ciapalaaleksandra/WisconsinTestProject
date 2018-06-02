@@ -21,7 +21,7 @@
 
 
         @using (Html.BeginForm())
-        {
+    {
 
         @Html.AntiForgeryToken()
         <div class="align-self-center">
@@ -39,35 +39,35 @@
                                 </div>
 
                                 <div class="py-3">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="@Url.Action("StartTest", "Test")">
-                                                        <i class="fa d-inline fa-lg fa-bookmark-o"></i> Rozpocznij Test
-                                                    </a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="@Url.Action("Edit", "Psychologist", new { id = Model.PatientId })">
-                                                        <i class="fa d-inline fa-lg fa-pencil"></i> Edytuj dane
-                                                    </a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="@Url.Action("Delete", "Psychologist", new { id = Model.PatientId })">
-                                                        <i class="fa d-inline fa-lg fa-ban"></i> Usuń pacjenta
-                                                    </a>
-                                                </li>
-                                                @*<li class="page-item">
-                                                    <a class="page-link" href="#">
-                                                        <i class="fa d-inline fa-lg fa-area-chart"></i> Statystyki
-                                                    </a>
-                                                </li>*@
-                                            </ul>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <ul class="pagination">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="@Url.Action("StartTest", "Test")">
+                                                            <i class="fa d-inline fa-lg fa-bookmark-o"></i> Rozpocznij Test
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="@Url.Action("Edit", "Psychologist", new { id = Model.PatientId })">
+                                                            <i class="fa d-inline fa-lg fa-pencil"></i> Edytuj dane
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="@Url.Action("Delete", "Psychologist", new { id = Model.PatientId })">
+                                                            <i class="fa d-inline fa-lg fa-ban"></i> Usuń pacjenta
+                                                        </a>
+                                                    </li>
+                                                    @*<li class="page-item">
+                                                        <a class="page-link" href="#">
+                                                            <i class="fa d-inline fa-lg fa-area-chart"></i> Statystyki
+                                                        </a>
+                                                    </li>*@
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
                                 <div class="row">
                                 </div>
@@ -91,12 +91,12 @@
                         <h5 class="my-2">Numer telefonu</h5>
                         <p class="">@Html.DisplayFor(model => model.PhoneNumber)</p>
                         <h5 class="my-2">Data urodzenia</h5>
-                        <p class="">@Html.DisplayFor(model=> model.BirthDate.Day) . @Html.DisplayFor(model => model.BirthDate.Month) . @Html.DisplayFor(model => model.BirthDate.Year)</p>
+                        <p class="">@Html.DisplayFor(model => model.BirthDate.Day) . @Html.DisplayFor(model => model.BirthDate.Month) . @Html.DisplayFor(model => model.BirthDate.Year)</p>
                     </div>
                 </div>
             </div>
         </div>
-        }
+}
         <div>
             <table class="table">
                 <tr>
@@ -111,30 +111,30 @@
             {
                 foreach (var result in item.Results.Where(x => x.SurveyId == item.SurveyId))
                 {
-                        <tr>
-                            <td align="center">
-                                @Html.DisplayFor(modelItem => item.Date.Day) . @Html.DisplayFor(modelItem =>item.Date.Month) . @Html.DisplayFor(modelItem => item.Date.Year)
-                            </td>
-                            <td align="center">
-                                @Html.DisplayFor(modelItem => result.NumberOfTries)
-                            </td>
-                            <td align="center">
-                                @Html.DisplayFor(modelItem => result.CorrectAnswers)
-                            </td>
-                            <td align="center">
-                                @Html.DisplayFor(modelItem => result.PerseverationErrors)
-                            </td>
-                            <td align="center">
-                                @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
-                            </td>
-                        </tr>}
-            }
+                    <tr>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => item.Date.Day) . @Html.DisplayFor(modelItem => item.Date.Month) . @Html.DisplayFor(modelItem => item.Date.Year)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.NumberOfTries)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.CorrectAnswers)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.PerseverationErrors)
+                        </td>
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+                        </td>
+                    </tr>}
+        }
                 <tr>
                     <th class="tg-us36">Pokaż na wykresie:</th>
-                    <th><input type="checkbox"></th>
-                    <th><input type="checkbox"></th>
-                    <th><input type="checkbox"></th>
-                    <th><input type="checkbox"></th>
+                    <th align="center"><input type="checkbox"></th>
+                    <th align="center"><input type="checkbox"></th>
+                    <th align="center"><input type="checkbox"></th>
+                    <th align="center"><input type="checkbox"></th>
                 </tr>
             </table>
         </div>
@@ -183,6 +183,8 @@
 
     }
         </script>
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     </body>
 
 </html>
