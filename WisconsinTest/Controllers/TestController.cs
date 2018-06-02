@@ -142,8 +142,8 @@ namespace WisconsinTest.Controllers
                 if (sList.Count == 0)
                     result.SurveyId = 1;
                 else
-                    result.SurveyId = sList.OrderBy(x => x.SurveyId).Select(x => x.SurveyId).FirstOrDefault();
-                
+                    result.SurveyId = sList.OrderByDescending(x => x.SurveyId).Select(x => x.SurveyId).FirstOrDefault();
+
                 db.Results.Add(result);
                 db.SaveChanges();
             }
