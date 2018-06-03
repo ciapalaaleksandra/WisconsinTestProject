@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using WisconsinTest.Models;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
 namespace WisconsinTest.Controllers
 {
@@ -44,7 +47,7 @@ namespace WisconsinTest.Controllers
         {
             using (WiscounsinTestDatabaseEntities db = new WiscounsinTestDatabaseEntities())
             {
-                
+
                 if (u.Login != null && u.Passowrd != null)
                 {
                     var v = db.Users.Where(a => a.Login == u.Login && a.Passowrd == u.Passowrd).FirstOrDefault();
@@ -52,7 +55,7 @@ namespace WisconsinTest.Controllers
                     {
                         Session["LogedUserID"] = v.UserId.ToString();
                         Session["LogedUserLogin"] = v.Login.ToString();
-                        
+
                         return RedirectToAction("Index", "Psychologist");
                     }
                 }
@@ -96,5 +99,6 @@ namespace WisconsinTest.Controllers
         }
 
 
+
+        }
     }
-}
