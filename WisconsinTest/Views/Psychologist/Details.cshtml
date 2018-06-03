@@ -108,38 +108,39 @@
                 </tr>
 
                 @foreach (var item in Model.Surveys.Where(x => Model.PatientId == x.PatientId))
-                {
+    {
+
+            foreach (var result in item.Results.Where(x => item.SurveyId == x.SurveyId))
+{
                 <tr>
                     <td align="center">
                         @Html.DisplayFor(modelItem => item.Date.Day) . @Html.DisplayFor(modelItem => item.Date.Month) . @Html.DisplayFor(modelItem => item.Date.Year)
                     </td>
-                    @foreach (var result in item.Results.Where(x => item.SurveyId == x.SurveyId))
-    {
-
-                <td align="center">
-                    @Html.DisplayFor(modelItem => result.NumberOfTries)
-                </td>
-                <td align="center">
-                    @Html.DisplayFor(modelItem => result.CorrectAnswers)
-                </td>
-                <td align="center">
-                    @Html.DisplayFor(modelItem => result.PerseverationErrors)
-                </td>
-                <td align="center">
-                    @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
-                </td>
-}
-
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.NumberOfTries)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.CorrectAnswers)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.PerseverationErrors)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+                    </td>
                 </tr>
                 }
-                
-                @*<tr>
-                    <th class="tg-us36">Pokaż na wykresie:</th>
-                    <th align="center"><input type="checkbox"></th>
-                    <th align="center"><input type="checkbox"></th>
-                    <th align="center"><input type="checkbox"></th>
-                    <th align="center"><input type="checkbox"></th>
-                </tr>*@
+
+            
+}
+
+            @*<tr>
+        <th class="tg-us36">Pokaż na wykresie:</th>
+        <th align="center"><input type="checkbox"></th>
+        <th align="center"><input type="checkbox"></th>
+        <th align="center"><input type="checkbox"></th>
+        <th align="center"><input type="checkbox"></th>
+    </tr>*@
             </table>
         </div>
 
