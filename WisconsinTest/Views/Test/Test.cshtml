@@ -1,5 +1,9 @@
 ﻿
 @{
+    var endTime = DateTime.UtcNow.AddSeconds(10);
+    var remainingTime = TimeSpan.FromTicks(endTime.Ticks - DateTime.UtcNow.Ticks).TotalSeconds;
+}
+@{
     //Layout = "~/Views/Shared/_WSCTLayout.cshtml";
     Layout = null;
 }
@@ -11,12 +15,13 @@
     <meta name="viewport" content="width=device-width" />
     <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
     <title>Test</title>
+   
 </head>
 
 <!--<body>
     <h2 style="text-align: center;"><strong>Test</strong></h2>
 
-
+    
     @using (Html.BeginForm("Test", "Test", FormMethod.Post))
     {
         <h2 style="text-align: center;">
@@ -40,6 +45,9 @@
         <img src="@Url.Content(ViewBag.ImagePath)" width="300" height="300" />
 
         @ViewBag.LastChoiceResult
+
+    
+
     </h2>
 </body>-->
 
@@ -54,8 +62,14 @@
             </div>
         </div>
     </div>-->
+    <button type="button" class="btn btn-primary p-2 m-2" onclick="@("window.location.href='" + @Url.Action("Details", "Psychologist", new { id = Session["PatientId"] })  + "'");">
+        Zakończ test
+    </button>
     <div class="py-5">
         <div class="container">
+            Pozostały czas:
+            <span id="minRemaining"></span>:
+            <span id="secRemaining"></span>
             @using (Html.BeginForm("Test", "Test", FormMethod.Post))
             {
                 <div class="row">
@@ -105,7 +119,37 @@
 
         @ViewBag.LastChoiceResult
     </h2>
+    <script>
+        var remSeconds = @remainingTime;
+        var secondsCounter = remSeconds % 60;
+        function formatNumber(number)
+        {
+            if(number<10) return '0'+ number;
+            else return '' + number;
+        }
 
+        function startTick()
+        {
+            document.getElementById('secRemaining').innerText = formatNumber(secondsCounter);
+            document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds/60));
+
+            var _tick = setInterval(function()
+            {
+                    remSeconds = remSeconds-1;
+                    secondsCounter = secondsCounter-1;
+                    document.getElementById('secRemaining').innerText = formatNumber(secondsCounter);
+                    document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds/60));
+
+                    if(secondsCounter==0)
+                    {
+                        secondsCounter = 60;
+                        window.location.href = '@Url.Action("Test", new {button=""})';
+                    }
+            }, 1000);
+
+        }
+        startTick();
+    </script>
 </body>
 
 </html>

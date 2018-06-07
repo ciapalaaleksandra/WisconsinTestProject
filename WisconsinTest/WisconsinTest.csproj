@@ -45,6 +45,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Desktop\itextsharp-all-5.5.10 (1)\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\Desktop\itextsharp-all-5.5.10 (1)\itextsharp-dll-pdfa\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\Desktop\itextsharp-all-5.5.10 (1)\itextsharp-dll-xtra\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +87,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -198,6 +213,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\SurveysController.cs" />
     <Compile Include="Helpers\Card.cs" />
     <Compile Include="Helpers\CardList.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -209,6 +225,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Patients.cs">
@@ -221,9 +238,6 @@
       <DependentUpon>WisconsinTestModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Surveys.cs">
-      <DependentUpon>WisconsinTestModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>WisconsinTestModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
@@ -326,6 +340,7 @@
     <Content Include="Content\Images\logo.jpg" />
     <Content Include="Content\Images\rectangleTest.png" />
     <Content Include="Content\Images\starTest.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -364,7 +379,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -409,6 +426,8 @@
     <Content Include="Views\Test\StartTest.cshtml" />
     <Content Include="Views\Test\TestResult.cshtml" />
     <Content Include="Views\Shared\_WSCTLayout.cshtml" />
+    <Content Include="Views\Surveys\Delete.cshtml" />
+    <Content Include="Views\Surveys\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

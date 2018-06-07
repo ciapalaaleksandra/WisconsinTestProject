@@ -64,12 +64,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <form class="form-inline">
-                        <button type="button" class="btn btn-primary p-2 m-2" onclick="@("window.location.href='" + @Url.Action("Index", "Psychologist") + "'");">
+                        <button type="button" class="btn btn-primary p-2 m-2" onclick="@("window.location.href='" + @Url.Action("Details", "Psychologist" , new { id = Session["PatientId"] }) + "'");">
                             Zakończ
                         </button>
                         <div class="form-group">
-                            <a class="btn btn-primary p-2 m-2" href="#"><i class="d-block  fa fa-2x fa-file-pdf-o"></i></a>
-                        </div>
+                            @*<a type="button" class="btn btn-primary p-2 m-2"  href="#" ><i class="d-block  fa fa-2x fa-file-pdf-o"></i></a>*@
+                            <button type="button" class="btn btn-primary p-2 m-2, d-block  fa fa-2x fa-file-pdf-o"   onclick="@("window.location.href='" + @Url.Action("GetFile", "Test") + "'");" />
+                                @*<center><input type="button" value="Generuj pdf" onclick="location.href='@Url.Action("GetFile", "Test")'" class="btn" /></center>*@
+</div>
                     </form>
                 </div>
             </div>

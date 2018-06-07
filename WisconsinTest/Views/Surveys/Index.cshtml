@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WisconsinTest.Models.Surveys>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @using (Html.BeginForm())
+    {
+        <p> Znajdź po imieniu lub nazwisku: @Html.TextBox("SearchString")<input type="submit" value="Search" /></p>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Data", "Index", new { sortOrder = ViewBag.DateSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Imię", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.SurnameSortParm })
+            </th>
+            <th class="tg-us36">Liczba prób</th>
+            <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
+            <th class="tg-us36">Liczba błędów perseweracyjnych</th>
+            <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        foreach (var result in item.Results.Where(x => x.SurveyId == item.SurveyId))
+        {
+        <tr>
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.Patients.Name)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.Patients.Surname)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => result.NumberOfTries)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => result.CorrectAnswers)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => result.PerseverationErrors)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+            </td>
+
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.SurveyId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.SurveyId }) |*@
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.SurveyId })*@
+            </td>
+        </tr>
+        }
+        }
+
+    </table>
+</body>
+</html>

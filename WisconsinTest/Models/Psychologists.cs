@@ -20,7 +20,7 @@ namespace WisconsinTest.Models
         {
             this.Patients = new HashSet<Patients>();
         }
-    
+
         public int PsychologistId { get; set; }
         public int UserId { get; set; }
         [Required(ErrorMessage = "Nalezy podac imie.")]
@@ -42,7 +42,6 @@ namespace WisconsinTest.Models
         [Required(ErrorMessage = "Nalezy podac PESEL.")]
         [Display(Name = "PESEL")]
         public string PESEL { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Patients> Patients { get; set; }
         public virtual Users Users { get; set; }

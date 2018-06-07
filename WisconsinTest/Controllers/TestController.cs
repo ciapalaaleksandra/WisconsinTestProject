@@ -6,13 +6,14 @@ using System.Web.Mvc;
 using System.Threading;
 using System.IO;
 using WisconsinTest.Models;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace WisconsinTest.Controllers
 {
     public class TestController : Controller
     {
 
-        //UTWORZENIE SESJI:
         public ActionResult StartTest()
         {
             // Session start parameters
@@ -29,12 +30,22 @@ namespace WisconsinTest.Controllers
             return View();
         }
 
-
+        //UTWORZENIE SESJI:
         public ActionResult Test(string button)
         {
             if ((int)Session["NumberOfChanges"] <= 0)//6 ma byc
             {
-                if (button != null)
+                if (button == null)
+                {
+                    var NumberofTrials = (int)Session["NumberofTrials"];
+                    if (NumberofTrials != 0)
+                    {
+                        NumberofTrials++;
+                        Session["NumberofTrials"] = NumberofTrials;
+                    }
+                    
+                }
+                else
                 {
                     TestCount(button);
                 }
@@ -110,48 +121,80 @@ namespace WisconsinTest.Controllers
             string idPatientString = Session["PatientId"].ToString();
             int idPatient = int.Parse(idPatientString);
 
-            //using (WiscounsinTestDatabaseEntities db = new WiscounsinTestDatabaseEntities())
-            //{
-            //    Surveys survey = new Surveys();
-            //    Results result = new Results();
+            using (WiscounsinTestDatabaseEntities db = new WiscounsinTestDatabaseEntities())
+            {
+                Surveys survey = new Surveys();
+                Results result = new Results();
 
-            //    survey.PatientId = idPatient;
-            //    survey.Date = DateTime.Today;
-            //    db.Surveys.Add(survey);
-            //    db.SaveChanges();
+                survey.PatientId = idPatient;
+                survey.Date = DateTime.Today;
+                db.Surveys.Add(survey);
+                db.SaveChanges();
 
-            //    result.CorrectAnswers = ViewBag.TotalCorrect;
-            //    result.NonPerseveranceErrors = ViewBag.NonPerseverativeErrors;
-            //    result.NumberOfTries = ViewBag.NumberofTrials;
-            //    result.PerseverationErrors = ViewBag.PerseverativeErrors;
-            //    result.Rules = test;
+                result.CorrectAnswers = ViewBag.TotalCorrect;
+                result.NonPerseveranceErrors = ViewBag.NonPerseverativeErrors;
+                result.NumberOfTries = ViewBag.NumberofTrials;
+                result.PerseverationErrors = ViewBag.PerseverativeErrors;
+                result.Rules = test;
 
-            //    List<Surveys> sList = db.Surveys.ToList();
+                List<Surveys> sList = db.Surveys.ToList();
 
-            //    if (sList.Count == 0)
-            //        result.SurveyId = 1;
-            //    else
-            //        result.SurveyId = sList.OrderBy(x => x.SurveyId).Select(x => x.SurveyId).FirstOrDefault();
+                if (sList.Count == 0)
+                    result.SurveyId = 1;
+                else
+                    result.SurveyId = sList.OrderByDescending(x => x.SurveyId).Select(x => x.SurveyId).FirstOrDefault();
 
-               
-            //    db.Results.Add(result);
-            //    db.SaveChanges();
-
-            //}
+                db.Results.Add(result);
+                db.SaveChanges();
+            }
 
 
             ViewBag.TestSequence = test;
-            Session["NumberofTrials"] = 0;
-            Session["TotalCorrect"] = 0;
-            Session["PerseverativeErrors"] = 0;
-            Session["NonPerseverativeErrors"] = 0;
-            Session["NumberOfChanges"] = 0;
-            Session["CorrectAnswers"] = 0;
+            //Session["NumberofTrials"] = 0;
+            //Session["TotalCorrect"] = 0;
+            //Session["PerseverativeErrors"] = 0;
+            //Session["NonPerseverativeErrors"] = 0;
+            //Session["NumberOfChanges"] = 0;
+            //Session["CorrectAnswers"] = 0;
             var ResultedRulesList = (List<int>)Session["ResultedRulesList"];
             ResultedRulesList.Clear();
             Session["ResultedRulesList"] = ResultedRulesList;
 
             return View();
+        }
+
+        public ActionResult GetFile()
+        {
+            WiscounsinTestDatabaseEntities db = new WiscounsinTestDatabaseEntities();
+            string idPatientString = Session["PatientId"].ToString();
+            int idPatient = int.Parse(idPatientString);
+            var p = db.Patients.Where(i => i.PatientId == idPatient).FirstOrDefault();
+
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                Document doc = new Document(PageSize.A4, 88f, 88f, 10f, 10f);
+                Font NormalFont = FontFactory.GetFont("Arial", 12, BaseColor.BLUE);
+                PdfWriter writer = PdfWriter.GetInstance(doc, ms);
+                var bigFont = FontFactory.GetFont(BaseFont.COURIER, BaseFont.CP1257, 18, Font.BOLD);
+                var normalFont = FontFactory.GetFont(BaseFont.COURIER, BaseFont.CP1257, 14);
+                doc.Open();
+                doc.Add(new Paragraph("Dane pacjenta:", bigFont));
+                doc.Add(new Paragraph("Imię i nazwisko: " + p.Name + " " + p.Surname, normalFont));
+                doc.Add(new Paragraph("Data urodzenia: " + p.BirthDate.Day +"."+ p.BirthDate.Month + "." + p.BirthDate.Year, normalFont));
+                doc.Add(new Paragraph("PESEL: " + p.PESEL, normalFont));
+                doc.Add(new Paragraph("Wyniki badań:", bigFont));
+                doc.Add(new Paragraph("Data: " + DateTime.Today.Day + "." + DateTime.Today.Month + "." + DateTime.Today.Year, normalFont));
+                doc.Add(new Paragraph("Liczba odpowiedzi: " + Session["NumberofTrials"].ToString(), normalFont));
+                doc.Add(new Paragraph("Liczba poprawnych odpowiedzi: " + Session["TotalCorrect"].ToString(), normalFont));
+                doc.Add(new Paragraph("Liczba błędów perseweracyjnych: " + Session["PerseverativeErrors"].ToString(), normalFont));
+                doc.Add(new Paragraph("Liczba błędów nieperseweracyjnych: " + Session["NonPerseverativeErrors"].ToString(), normalFont));
+                doc.Close();
+                byte[] bytes = ms.ToArray();
+                ms.Close();
+                
+                return File(bytes, "application/pdf", "testResult.pdf");
+            }
         }
 
         private string PickImageFromDirectory(string DirectoryPath)
@@ -326,13 +369,13 @@ namespace WisconsinTest.Controllers
                 }
             }
         }
-        private void Check(int resultedRule)
+        public void Check(int resultedRule)
         {
             if ((int)Session["Rule"] == resultedRule)
             {
                 ViewBag.LastChoiceResult = "Dobrze!";
-                System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(Server.MapPath("~/Content/Audio/yes2.wav"));         
-                CorrectSound.Play();
+                System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\yes2.wav");
+                //CorrectSound.Play();
                 var CorrectAnswers = (int)Session["CorrectAnswers"];
                 CorrectAnswers++;
                 Session["CorrectAnswers"] = CorrectAnswers;
@@ -343,8 +386,8 @@ namespace WisconsinTest.Controllers
             else
             {
                 ViewBag.LastChoiceResult = "Źle!";
-                System.Media.SoundPlayer WrongSound = new System.Media.SoundPlayer(Server.MapPath("~/Content/Audio/no3.wav"));
-                WrongSound.Play();
+                System.Media.SoundPlayer WrongSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\no2.wav");
+                //WrongSound.Play();
                 CheckError(resultedRule);
             }
         }

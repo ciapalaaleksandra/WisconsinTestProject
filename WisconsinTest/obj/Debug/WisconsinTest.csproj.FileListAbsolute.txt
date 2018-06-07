@@ -164,3 +164,12 @@ C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\obj\Debug\WisconsinT
 C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\obj\Debug\WisconsinTest.csproj.CopyComplete
 C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\obj\Debug\WisconsinTest.dll
 C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\obj\Debug\WisconsinTest.pdb
+C:\Users\aleks\Documents\WisconsinTestProject\WisconsinTest\bin\itextsharp.xml
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\itextsharp.dll
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\itextsharp.pdfa.dll
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\itextsharp.xtra.dll
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\itextsharp.xml
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\PagedList.dll
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\PagedList.Mvc.dll
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\PagedList.xml
+C:\Users\annaw\Documents\WisconsinTestProject\WisconsinTest\bin\PagedList.Mvc.xml

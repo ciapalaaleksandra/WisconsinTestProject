@@ -19,7 +19,7 @@ namespace WisconsinTest.Models
         {
             this.Surveys = new HashSet<Surveys>();
         }
-    
+
         public int PatientId { get; set; }
         public int PsychologistId { get; set; }
         public string Name { get; set; }
@@ -28,7 +28,7 @@ namespace WisconsinTest.Models
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public System.DateTime BirthDate { get; set; }
-    
+
         public virtual Psychologists Psychologists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Surveys> Surveys { get; set; }

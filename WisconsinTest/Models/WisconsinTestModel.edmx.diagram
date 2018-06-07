@@ -8,14 +8,13 @@
         <EntityTypeShape EntityType="WiscounsinTestDatabaseModel.Patients" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="WiscounsinTestDatabaseModel.Psychologists" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="WiscounsinTestDatabaseModel.Results" Width="1.5" PointX="9.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="WiscounsinTestDatabaseModel.Surveys" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WiscounsinTestDatabaseModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WiscounsinTestDatabaseModel.Users" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="WiscounsinTestDatabaseModel.FK_Patients_Psychologists" ManuallyRouted="false" />
-        <AssociationConnector Association="WiscounsinTestDatabaseModel.FK_Surveys_Patients" ManuallyRouted="false" />
         <AssociationConnector Association="WiscounsinTestDatabaseModel.FK_Psychologists_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="WiscounsinTestDatabaseModel.FK_Results_Surveys" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="WiscounsinTestDatabaseModel.Surveys" Width="1.5" PointX="7.5" PointY="1.5" />
+        <AssociationConnector Association="WiscounsinTestDatabaseModel.FK_Surveys_Patients" />
+        <AssociationConnector Association="WiscounsinTestDatabaseModel.FK_Results_Surveys" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

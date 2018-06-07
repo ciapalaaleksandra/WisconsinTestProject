@@ -20,7 +20,7 @@ namespace WisconsinTest.Models
         {
             this.Psychologists = new HashSet<Psychologists>();
         }
-    
+
         public int UserId { get; set; }
         [Required(ErrorMessage = "Nalezy podac login.", AllowEmptyStrings = false)]
         [Display(Name = "Login")]
@@ -30,6 +30,8 @@ namespace WisconsinTest.Models
         [MinLength(6, ErrorMessage = "Haslo powinno skladac sie z minimum 6 znakow.")]
         [Display(Name = "Haslo")]
         public string Passowrd { get; set; }
+        [Required(ErrorMessage = "Nalezy podac imiê.")]
+        [Display(Name = "Imie")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Nalezy podac nazwisko.")]
         [Display(Name = "Nazwisko")]
