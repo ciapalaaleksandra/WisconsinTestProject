@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WisconsinTest.Models.Surveys>
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_WSCTLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -10,69 +10,126 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
-    <p>
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a href=@Url.Action("Index", "Psychologist") class="nav-link">
+                                <i class="fa fa-home fa-child"></i>&nbsp;Pacjenci
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=@Url.Action("Create", "Psychologist") class="nav-link">
+                                <i class="fa fa-home fa-pencil"></i>&nbsp;Dodaj pacjenta
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="active nav-link" href="#">
+                                <i class="fa fa-home fa-clipboard"></i>&nbsp;Statystyki
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--<p>
         @Html.ActionLink("Create New", "Create")
-    </p>
-    @using (Html.BeginForm())
-    {
-        <p> Znajdź po imieniu lub nazwisku: @Html.TextBox("SearchString")<input type="submit" value="Search" /></p>
-    }
-    <table class="table">
-        <tr>
-            <th>
-                @Html.ActionLink("Data", "Index", new { sortOrder = ViewBag.DateSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Imię", "Index", new { sortOrder = ViewBag.NameSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.SurnameSortParm })
-            </th>
-            <th class="tg-us36">Liczba prób</th>
-            <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
-            <th class="tg-us36">Liczba błędów perseweracyjnych</th>
-            <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
-            <th></th>
-        </tr>
+    </p>-->
 
-        @foreach (var item in Model)
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--@using (Html.BeginForm())
+                    {
+                    <p> Znajdź po imieniu lub nazwisku: @Html.TextBox("SearchString")<input type="submit" class="btn btn-primary" value="Szukaj" /></p>
+
+                    }
+
+
+                        @using (Html.BeginForm())
+                        {
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Imię, lub nazwisko">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Szukaj</button>
+                    </form>
+                        }-->
+
+                    @using (Html.BeginForm())
+                    {
+                    <form class="form-inline m-0 p-1">
+                        @Html.TextBox("SearchString", new { htmlAttributes = new { @class = "form-control mr-sm-2" } })
+                        <input type="submit" class="btn btn-primary" value="Szukaj" />
+                    </form>
+                    }
+
+                    <table class="table table-hover">
+                        <tr>
+                            <th>
+                                @Html.ActionLink("Data", "Index", new { sortOrder = ViewBag.DateSortParm })
+                            </th>
+                            <th>
+                                @Html.ActionLink("Imię", "Index", new { sortOrder = ViewBag.NameSortParm })
+                            </th>
+                            <th>
+                                @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.SurnameSortParm })
+                            </th>
+                            <th class="tg-us36">Liczba prób</th>
+                            <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
+                            <th class="tg-us36">Liczba błędów perseweracyjnych</th>
+                            <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
         {
-        foreach (var result in item.Results.Where(x => x.SurveyId == item.SurveyId))
-        {
-        <tr>
-            <td align="center">
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td align="center">
-                @Html.DisplayFor(modelItem => item.Patients.Name)
-            </td>
-            <td align="center">
-                @Html.DisplayFor(modelItem => item.Patients.Surname)
-            </td>
-            <td align="center">
-                @Html.DisplayFor(modelItem => result.NumberOfTries)
-            </td>
-            <td align="center">
-                @Html.DisplayFor(modelItem => result.CorrectAnswers)
-            </td>
-            <td align="center">
-                @Html.DisplayFor(modelItem => result.PerseverationErrors)
-            </td>
-            <td align="center">
-                @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
-            </td>
+            foreach (var result in item.Results.Where(x => x.SurveyId == item.SurveyId))
+            {
+                <tr>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.Patients.Name)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.Patients.Surname)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.NumberOfTries)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.CorrectAnswers)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.PerseverationErrors)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+                    </td>
 
-            <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.SurveyId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.SurveyId }) |*@
-                @*@Html.ActionLink("Delete", "Delete", new { id = item.SurveyId })*@
-            </td>
-        </tr>
-        }
-        }
-
-    </table>
+                </tr>
+}
+}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

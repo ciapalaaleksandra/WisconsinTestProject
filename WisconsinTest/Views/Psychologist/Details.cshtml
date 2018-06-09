@@ -58,11 +58,6 @@
                                                             <i class="fa d-inline fa-lg fa-ban"></i> Usuń pacjenta
                                                         </a>
                                                     </li>
-                                                    @*<li class="page-item">
-                                                        <a class="page-link" href="#">
-                                                            <i class="fa d-inline fa-lg fa-area-chart"></i> Statystyki
-                                                        </a>
-                                                    </li>*@
                                                 </ul>
                                             </div>
                                         </div>
@@ -96,56 +91,56 @@
                 </div>
             </div>
         </div>
-}
-        <div>
-            <table class="table">
-                <tr>
-                    <th class="tg-us36">Numer próby</th>
-                    <th class="tg-us36">Liczba prób</th>
-                    <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
-                    <th class="tg-us36">Liczba błędów perseweracyjnych</th>
-                    <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
-                </tr>
 
-                @foreach (var item in Model.Surveys.Where(x => Model.PatientId == x.PatientId))
-    {
+        <div class="p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <tr>
+                                <th class="tg-us36">Numer próby</th>
+                                <th class="tg-us36">Liczba prób</th>
+                                <th class="tg-us36">Liczba prawidłowych odpowiedzi</th>
+                                <th class="tg-us36">Liczba błędów perseweracyjnych</th>
+                                <th class="tg-us36">Liczba błędów nieperseweracyjnych</th>
+                            </tr>
 
-            foreach (var result in item.Results.Where(x => item.SurveyId == x.SurveyId))
-{
-                <tr>
-                    <td align="center">
-                        @Html.DisplayFor(modelItem => item.Date.Day) . @Html.DisplayFor(modelItem => item.Date.Month) . @Html.DisplayFor(modelItem => item.Date.Year)
-                    </td>
-                    <td align="center">
-                        @Html.DisplayFor(modelItem => result.NumberOfTries)
-                    </td>
-                    <td align="center">
-                        @Html.DisplayFor(modelItem => result.CorrectAnswers)
-                    </td>
-                    <td align="center">
-                        @Html.DisplayFor(modelItem => result.PerseverationErrors)
-                    </td>
-                    <td align="center">
-                        @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
-                    </td>
-                </tr>
-                }
+                            @foreach (var item in Model.Surveys.Where(x => Model.PatientId == x.PatientId))
+                        {
 
-            
-}
-
-            @*<tr>
-        <th class="tg-us36">Pokaż na wykresie:</th>
-        <th align="center"><input type="checkbox"></th>
-        <th align="center"><input type="checkbox"></th>
-        <th align="center"><input type="checkbox"></th>
-        <th align="center"><input type="checkbox"></th>
-    </tr>*@
-            </table>
+                            foreach (var result in item.Results.Where(x => item.SurveyId == x.SurveyId))
+                            {
+                                <tr>
+                                    <td align="center">
+                                        @Html.DisplayFor(modelItem => item.Date.Day) . @Html.DisplayFor(modelItem => item.Date.Month) . @Html.DisplayFor(modelItem => item.Date.Year)
+                                    </td>
+                                    <td align="center">
+                                        @Html.DisplayFor(modelItem => result.NumberOfTries)
+                                    </td>
+                                    <td align="center">
+                                        @Html.DisplayFor(modelItem => result.CorrectAnswers)
+                                    </td>
+                                    <td align="center">
+                                        @Html.DisplayFor(modelItem => result.PerseverationErrors)
+                                    </td>
+                                    <td align="center">
+                                        @Html.DisplayFor(modelItem => result.NonPerseveranceErrors)
+                                    </td>
+                                </tr>
+                        }
+                    }
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div id="chartContainer"></div>
-        <script>
+        <div class="p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="chartContainer"></div>
+                        <script>
         window.onload = function () {
             var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
@@ -187,9 +182,13 @@
     chart.render();
 
     }
-        </script>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                        </script>
+                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
     </body>
-
 </html>
