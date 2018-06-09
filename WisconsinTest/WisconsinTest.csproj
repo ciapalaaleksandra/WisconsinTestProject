@@ -240,6 +240,9 @@
     <Compile Include="Models\Surveys.cs">
       <DependentUpon>WisconsinTestModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>WisconsinTestModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Users.cs">
       <DependentUpon>WisconsinTestModel.tt</DependentUpon>
     </Compile>

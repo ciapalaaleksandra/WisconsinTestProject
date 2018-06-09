@@ -24,12 +24,15 @@ namespace WisconsinTest.Models
         public int PsychologistId { get; set; }
         public int UserId { get; set; }
         [Required(ErrorMessage = "Nalezy podac imie.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Nalezy podac litery")]
         [Display(Name = "Imie")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Nalezy podac nazwisko.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Nalezy podac litery")]
         [Display(Name = "Nazwisko")]
         public string Surname { get; set; }
         [Required(ErrorMessage = "Nalezy podac numer telefonu.")]
+        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Nalezy podac liczby")]
         [Display(Name = "Numer telefonu")]
         public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "Nalezy podac adres.")]
@@ -40,6 +43,7 @@ namespace WisconsinTest.Models
         [Display(Name = "Data urodzenia")]
         public System.DateTime BirthDate { get; set; }
         [Required(ErrorMessage = "Nalezy podac PESEL.")]
+        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Nalezy podac liczby")]
         [Display(Name = "PESEL")]
         public string PESEL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
