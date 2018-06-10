@@ -15,7 +15,8 @@
 </head>
 <body>
 
-    <div class="py-5">
+
+    <div class="py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -49,36 +50,32 @@
     <!--<p>
         @Html.ActionLink("Create New", "Create")
     </p>-->
-
-
-    <div class="py-5">
+    <div class="">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <!--@using (Html.BeginForm())
-                    {
-                    <p> Znajdź po imieniu lub nazwisku: @Html.TextBox("SearchString")<input type="submit" class="btn btn-primary" value="Szukaj" /></p>
-
-                    }
 
 
-                        @using (Html.BeginForm())
-                        {
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Imię, lub nazwisko">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Szukaj</button>
-                    </form>
-                        }-->
 
-                    @using (Html.BeginForm())
-                    {
-                    <form class="form-inline m-0 p-1">
-                        @Html.TextBox("SearchString", new { htmlAttributes = new { @class = "form-control mr-sm-2" } })
-                        <input type="submit" class="btn btn-primary" value="Szukaj" />
-                    </form>
-                    }
+                    <div class="py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @using (Html.BeginForm())
+    {
+                                <form class="form-inline m-0">
+                                    <p class="mx-1">Wpisz imię, lub nazwisko:</p>
+                                    @Html.TextBox("SearchString")
+                                    <input type="submit" class="btn btn-primary btn-sm mx-3" value="Szukaj" />
+                                </form>
+}
+                                </div>
+                                </div>
+                        </div>
+                    </div>
 
-                    <table class="table table-hover">
+
+                    <table class="table table-hover py-3">
                         <tr>
                             <th>
                                 @Html.ActionLink("Data", "Index", new { sortOrder = ViewBag.DateSortParm })
@@ -128,8 +125,8 @@
 }
                     </table>
                 </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
 </body>
 </html>

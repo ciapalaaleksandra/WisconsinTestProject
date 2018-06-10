@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Wygenerowane w programie Microsoft Visio, SVG Export 4k.svg Strona 1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.77473in" height="4.60977in"
+		viewBox="0 0 415.781 331.904" xml:space="preserve" color-interpolation-filters="sRGB" class="st12">
+	<v:documentProperties v:langID="1045" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {visibility:visible}
+		.st2 {fill:#000000;fill-opacity:0.4;filter:url(#filter_2.6666667461395);stroke:none;stroke-linecap:round;stroke-linejoin:round}
+		.st3 {fill:#f8f8f8;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st4 {fill:#fee350;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st5 {fill:#fed601;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st6 {fill:#46af1f;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st7 {fill:#398e1a;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st8 {fill:#db0000;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st9 {fill:#c00000;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st10 {fill:#0084e6;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st11 {fill:#0070c0;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st12 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Filters">
+		<filter id="filter_2.6666667461395">
+			<feGaussianBlur stdDeviation="2.6666667461395"/>
+		</filter>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Strona 1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group31-1" transform="translate(398.684,-171.534) rotate(30)" v:mID="31" v:groupContext="group">
+			<title>Arkusz.31</title>
+			<g id="shape32-2" v:mID="32" v:groupContext="shape">
+				<title>Kwadrat.1654</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow32-3" v:groupContext="shadow" v:shadowOffsetX="-3" v:shadowOffsetY="0" v:shadowType="1"
+						transform="matrix(1,0,0,1,-2.59808,1.5)" class="st1">
+					<rect x="0" y="198.071" width="134.098" height="133.833" rx="11.3386" ry="11.3386" class="st2"/>
+				</g>
+				<rect x="0" y="198.071" width="134.098" height="133.833" rx="11.3386" ry="11.3386" class="st3"/>
+			</g>
+			<g id="group33-7" transform="translate(22.509,-77.8162)" v:mID="33" v:groupContext="group">
+				<title>Arkusz.33</title>
+				<g id="shape34-8" v:mID="34" v:groupContext="shape">
+					<title>Arkusz.34</title>
+					<g id="shadow34-9" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st4"/>
+				</g>
+				<g id="shape35-13" v:mID="35" v:groupContext="shape" transform="translate(34.6707,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.35</title>
+					<g id="shadow35-14" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st5"/>
+				</g>
+			</g>
+			<g id="group36-18" transform="translate(75.2791,-20.9605)" v:mID="36" v:groupContext="group">
+				<title>Arkusz.36</title>
+				<g id="shape37-19" v:mID="37" v:groupContext="shape">
+					<title>Arkusz.37</title>
+					<g id="shadow37-20" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st4"/>
+				</g>
+				<g id="shape38-24" v:mID="38" v:groupContext="shape" transform="translate(34.6707,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.38</title>
+					<g id="shadow38-25" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st5"/>
+				</g>
+			</g>
+			<g id="group39-29" transform="translate(22.509,-77.8162)" v:mID="39" v:groupContext="group">
+				<title>Arkusz.39</title>
+				<g id="shape40-30" v:mID="40" v:groupContext="shape">
+					<title>Arkusz.40</title>
+					<g id="shadow40-31" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st4"/>
+				</g>
+				<g id="shape41-35" v:mID="41" v:groupContext="shape" transform="translate(34.6707,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.41</title>
+					<g id="shadow41-36" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st5"/>
+				</g>
+			</g>
+			<g id="group42-40" transform="translate(75.2791,-20.9605)" v:mID="42" v:groupContext="group">
+				<title>Arkusz.42</title>
+				<g id="shape43-41" v:mID="43" v:groupContext="shape">
+					<title>Arkusz.43</title>
+					<g id="shadow43-42" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st4"/>
+				</g>
+				<g id="shape44-46" v:mID="44" v:groupContext="shape" transform="translate(34.6707,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.44</title>
+					<g id="shadow44-47" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,0.776457,2.89778)" class="st1">
+						<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069
+									 20.7282 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st2"/>
+					</g>
+					<path d="M17.41 304.98 A8.66766 8.59359 -180 0 0 17.34 306.12 A8.66766 8.59359 -180 1 0 0 306.12 A20.9069 20.7282
+								 -180 0 0 6.41 321.07 L17.34 331.9 L17.41 331.83 L17.41 304.98 Z" class="st5"/>
+				</g>
+			</g>
+		</g>
+		<g id="group1-51" transform="translate(-124.953,77.6507) rotate(-40)" v:mID="1" v:groupContext="group">
+			<title>Arkusz.1</title>
+			<g id="shape2-52" v:mID="2" v:groupContext="shape">
+				<title>Kwadrat.1740</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow2-53" v:groupContext="shadow" v:shadowOffsetX="-3" v:shadowOffsetY="0" v:shadowType="1"
+						transform="matrix(1,-5.55112E-17,5.55112E-17,1,-2.29813,-1.92836)" class="st1">
+					<rect x="0" y="198.071" width="134.098" height="133.833" rx="11.3386" ry="11.3386" class="st2"/>
+				</g>
+				<rect x="0" y="198.071" width="134.098" height="133.833" rx="11.3386" ry="11.3386" class="st3"/>
+			</g>
+			<g id="group3-57" transform="translate(49.3781,-49.4855)" v:mID="3" v:groupContext="group">
+				<title>Arkusz.3</title>
+				<g id="shape4-58" v:mID="4" v:groupContext="shape">
+					<title>Arkusz.4</title>
+					<g id="shadow4-59" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,-5.55112E-17,5.55112E-17,1,-2.98858,0.261467)" class="st1">
+						<path d="M17.75 304.46 A8.83552 8.76001 -180 0 0 17.67 305.62 A8.83552 8.76001 -180 1 0 0 305.62 A21.3118
+									 21.1296 -180 0 0 6.54 320.86 L17.67 331.9 L17.75 331.83 L17.75 304.46 Z" class="st2"/>
+					</g>
+					<path d="M17.75 304.46 A8.83552 8.76001 -180 0 0 17.67 305.62 A8.83552 8.76001 -180 1 0 0 305.62 A21.3118 21.1296
+								 -180 0 0 6.54 320.86 L17.67 331.9 L17.75 331.83 L17.75 304.46 Z" class="st6"/>
+				</g>
+				<g id="shape5-63" v:mID="5" v:groupContext="shape" transform="translate(35.3421,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.5</title>
+					<g id="shadow5-64" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,5.55112E-17,-5.55112E-17,1,2.98858,0.261467)" class="st1">
+						<path d="M17.75 304.46 A8.83552 8.76001 -180 0 0 17.67 305.62 A8.83552 8.76001 -180 1 0 0 305.62 A21.3118
+									 21.1296 -180 0 0 6.54 320.86 L17.67 331.9 L17.75 331.83 L17.75 304.46 Z" class="st2"/>
+					</g>
+					<path d="M17.75 304.46 A8.83552 8.76001 -180 0 0 17.67 305.62 A8.83552 8.76001 -180 1 0 0 305.62 A21.3118 21.1296
+								 -180 0 0 6.54 320.86 L17.67 331.9 L17.75 331.83 L17.75 304.46 Z" class="st7"/>
+				</g>
+			</g>
+		</g>
+		<g id="group6-68" transform="translate(53.6798,-63.5368) rotate(-10)" v:mID="6" v:groupContext="group">
+			<title>Arkusz.6</title>
+			<g id="shape7-69" v:mID="7" v:groupContext="shape" transform="translate(0.0331428,0.0331428)">
+				<title>Kwadrat.86</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow7-70" v:groupContext="shadow" v:shadowOffsetX="-3" v:shadowOffsetY="0" v:shadowType="1"
+						transform="matrix(1,0,0,1,-2.95442,-0.520945)" class="st1">
+					<rect x="0" y="198.004" width="134.032" height="133.899" rx="11.3386" ry="11.3386" class="st2"/>
+				</g>
+				<rect x="0" y="198.004" width="134.032" height="133.899" rx="11.3386" ry="11.3386" class="st3"/>
+			</g>
+			<g id="group8-74" transform="translate(79.4395,-21.8579)" v:mID="8" v:groupContext="group">
+				<v:custProps>
+					<v:cp v:nameU="serceCzerwone" v:lbl="Właściwość2" v:type="0" v:langID="1045"/>
+				</v:custProps>
+				<title>Arkusz.8</title>
+				<g id="shape9-75" v:mID="9" v:groupContext="shape">
+					<title>Arkusz.9</title>
+					<g id="shadow9-76" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st8"/>
+				</g>
+				<g id="shape10-80" v:mID="10" v:groupContext="shape" transform="translate(35.1626,5.68434E-14) scale(-1,1)">
+					<title>Serce Czerwone</title>
+					<g id="shadow10-81" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st9"/>
+				</g>
+			</g>
+			<g id="group11-85" transform="translate(20.9473,-21.8579)" v:mID="11" v:groupContext="group">
+				<v:custProps>
+					<v:cp v:nameU="serceCzerwone" v:lbl="Właściwość2" v:type="0" v:langID="1045"/>
+				</v:custProps>
+				<title>Arkusz.11</title>
+				<g id="shape12-86" v:mID="12" v:groupContext="shape">
+					<title>Arkusz.12</title>
+					<g id="shadow12-87" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st8"/>
+				</g>
+				<g id="shape13-91" v:mID="13" v:groupContext="shape" transform="translate(35.1626,5.68434E-14) scale(-1,1)">
+					<title>Serce Czerwone</title>
+					<g id="shadow13-92" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st9"/>
+				</g>
+			</g>
+			<g id="group14-96" transform="translate(80.2162,-80.2344)" v:mID="14" v:groupContext="group">
+				<v:custProps>
+					<v:cp v:nameU="serceCzerwone" v:lbl="Właściwość2" v:type="0" v:langID="1045"/>
+				</v:custProps>
+				<title>Arkusz.14</title>
+				<g id="shape15-97" v:mID="15" v:groupContext="shape">
+					<title>Arkusz.15</title>
+					<g id="shadow15-98" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st8"/>
+				</g>
+				<g id="shape16-102" v:mID="16" v:groupContext="shape" transform="translate(35.1626,5.68434E-14) scale(-1,1)">
+					<title>Serce Czerwone</title>
+					<g id="shadow16-103" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st9"/>
+				</g>
+			</g>
+			<g id="group17-107" transform="translate(22.055,-80.2344)" v:mID="17" v:groupContext="group">
+				<v:custProps>
+					<v:cp v:nameU="serceCzerwone" v:lbl="Właściwość2" v:type="0" v:langID="1045"/>
+				</v:custProps>
+				<title>Arkusz.17</title>
+				<g id="shape18-108" v:mID="18" v:groupContext="shape">
+					<title>Arkusz.18</title>
+					<g id="shadow18-109" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st8"/>
+				</g>
+				<g id="shape19-113" v:mID="19" v:groupContext="shape" transform="translate(35.1626,5.68434E-14) scale(-1,1)">
+					<title>Serce Czerwone</title>
+					<g id="shadow19-114" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,2.45746,1.72073)" class="st1">
+						<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036
+									 21.0223 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.6 A8.79066 8.71553 -180 0 0 17.58 305.76 A8.79066 8.71553 -180 1 0 0 305.76 A21.2036 21.0223
+								 -180 0 0 6.51 320.92 L17.58 331.9 L17.66 331.83 L17.66 304.6 Z" class="st9"/>
+				</g>
+			</g>
+		</g>
+		<g id="group20-118" transform="translate(164.146,-173.511)" v:mID="20" v:groupContext="group">
+			<title>Arkusz.20</title>
+			<g id="shape21-119" v:mID="21" v:groupContext="shape">
+				<title>Kwadrat.1701</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow21-120" v:groupContext="shadow" v:shadowOffsetX="-3" v:shadowOffsetY="0" v:shadowType="1"
+						transform="matrix(1,0,0,1,-3,-5.68434E-14)" class="st1">
+					<rect x="0" y="198.071" width="134.098" height="133.833" rx="11.3386" ry="11.3386" class="st2"/>
+				</g>
+				<rect x="0" y="198.071" width="134.098" height="133.833" rx="11.3386" ry="11.3386" class="st3"/>
+			</g>
+			<g id="group22-124" transform="translate(18.959,-17.8674)" v:mID="22" v:groupContext="group">
+				<title>Arkusz.22</title>
+				<g id="shape23-125" v:mID="23" v:groupContext="shape">
+					<title>Arkusz.23</title>
+					<g id="shadow23-126" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-2.12132,2.12132)" class="st1">
+						<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036
+									 20.8864 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036 20.8864
+								 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st10"/>
+				</g>
+				<g id="shape24-130" v:mID="24" v:groupContext="shape" transform="translate(35.1626,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.24</title>
+					<g id="shadow24-131" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,2.12132,2.12132)" class="st1">
+						<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036
+									 20.8864 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036 20.8864
+								 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st11"/>
+				</g>
+			</g>
+			<g id="group25-135" transform="translate(49.4678,-82.1427)" v:mID="25" v:groupContext="group">
+				<title>Arkusz.25</title>
+				<g id="shape26-136" v:mID="26" v:groupContext="shape">
+					<title>Arkusz.26</title>
+					<g id="shadow26-137" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-2.12132,2.12132)" class="st1">
+						<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036
+									 20.8864 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036 20.8864
+								 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st10"/>
+				</g>
+				<g id="shape27-141" v:mID="27" v:groupContext="shape" transform="translate(35.1626,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.27</title>
+					<g id="shadow27-142" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,2.12132,2.12132)" class="st1">
+						<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036
+									 20.8864 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036 20.8864
+								 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st11"/>
+				</g>
+			</g>
+			<g id="group28-146" transform="translate(80.7333,-17.8674)" v:mID="28" v:groupContext="group">
+				<title>Arkusz.28</title>
+				<g id="shape29-147" v:mID="29" v:groupContext="shape">
+					<title>Arkusz.29</title>
+					<g id="shadow29-148" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,-2.12132,2.12132)" class="st1">
+						<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036
+									 20.8864 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036 20.8864
+								 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st10"/>
+				</g>
+				<g id="shape30-152" v:mID="30" v:groupContext="shape" transform="translate(35.1626,5.68434E-14) scale(-1,1)">
+					<title>Arkusz.30</title>
+					<g id="shadow30-153" v:groupContext="shadow" v:shadowOffsetX="-2.12132" v:shadowOffsetY="-2.12132"
+							v:shadowType="1" transform="matrix(1,0,0,1,2.12132,2.12132)" class="st1">
+						<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036
+									 20.8864 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st2"/>
+					</g>
+					<path d="M17.66 304.78 A8.79066 8.65916 -180 0 0 17.58 305.93 A8.79066 8.65916 -180 1 0 0 305.93 A21.2036 20.8864
+								 -180 0 0 6.51 320.99 L17.58 331.9 L17.66 331.83 L17.66 304.78 Z" class="st11"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

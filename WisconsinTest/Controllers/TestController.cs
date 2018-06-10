@@ -181,7 +181,7 @@ namespace WisconsinTest.Controllers
                 doc.Open();
                 doc.Add(new Paragraph("Dane pacjenta:", bigFont));
                 doc.Add(new Paragraph("Imię i nazwisko: " + p.Name + " " + p.Surname, normalFont));
-                doc.Add(new Paragraph("Data urodzenia: " + p.BirthDate.Day +"."+ p.BirthDate.Month + "." + p.BirthDate.Year, normalFont));
+                doc.Add(new Paragraph("Data urodzenia: " + p.BirthDate.Day + "." + p.BirthDate.Month + "." + p.BirthDate.Year, normalFont));
                 doc.Add(new Paragraph("PESEL: " + p.PESEL, normalFont));
                 doc.Add(new Paragraph("Wyniki badań:", bigFont));
                 doc.Add(new Paragraph("Data: " + DateTime.Today.Day + "." + DateTime.Today.Month + "." + DateTime.Today.Year, normalFont));
@@ -192,8 +192,9 @@ namespace WisconsinTest.Controllers
                 doc.Close();
                 byte[] bytes = ms.ToArray();
                 ms.Close();
-                
+
                 return File(bytes, "application/pdf", "testResult.pdf");
+
             }
         }
 
@@ -374,8 +375,9 @@ namespace WisconsinTest.Controllers
             if ((int)Session["Rule"] == resultedRule)
             {
                 ViewBag.LastChoiceResult = "Dobrze!";
-                System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\yes2.wav");
-                //CorrectSound.Play();
+                //System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\yes2.wav");
+                System.Media.SoundPlayer CorrectSound = new System.Media.SoundPlayer(Server.MapPath(Url.Content("~/Content/Audio/yes2.wav")));
+                CorrectSound.Play();
                 var CorrectAnswers = (int)Session["CorrectAnswers"];
                 CorrectAnswers++;
                 Session["CorrectAnswers"] = CorrectAnswers;
@@ -386,8 +388,8 @@ namespace WisconsinTest.Controllers
             else
             {
                 ViewBag.LastChoiceResult = "Źle!";
-                System.Media.SoundPlayer WrongSound = new System.Media.SoundPlayer(@"D:\Inżynieria Biomedyczna\Inżynieria Programowania\Projekt\Główny projekt\WisconsinTest\Content\Audio\no2.wav");
-                //WrongSound.Play();
+                System.Media.SoundPlayer WrongSound = new System.Media.SoundPlayer(Server.MapPath(Url.Content("~/Content/Audio/no3.wav")));
+                WrongSound.Play();
                 CheckError(resultedRule);
             }
         }

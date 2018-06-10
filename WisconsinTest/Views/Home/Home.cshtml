@@ -6,55 +6,82 @@
 
 <html>
 
-    <head>
-        <title>Home Page</title>
-        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
-    </head>
+<head>
+    <title>Home Page</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-    <body>
-        <div class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="display-1 text-center">TEST WISCONSIN</h1>
+<body>
+
+    <div class="pt-5 text-white bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-left text-center align-self-center my-5">
+                    <h1 style="font-size:5vw;">Psychologiczny Test Wisconsin</h1>
+                    <p class="lead">Wykonaj test gdziekolwiek chcesz.</p>
+                    <div class="row mt-5">
+                        <div class="col-md-5 col-6 text-center">
+                            <button type="button" class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("PsychologistRegistration", "Home") + "'");">Rejestracja</button>
+                        </div>
+                        <div class="col-md-5 col-6 text-left">
+                            <button type="button" class="btn btn-outline-primary" onclick="@("window.location.href='" + @Url.Action("Login", "Home") + "'");">Logowanie</button>
+                        </div>
                     </div>
+                </div>
+                <div class="col-md-6 align-self-center">
+                    <img class="img-fluid d-block mx-auto" src="~/Content/Images/4k.svg">
                 </div>
             </div>
         </div>
-        <div class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                    <button type="button" class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("Login", "Home") + "'");">Logowanie</button>
-                    <button type="button" class="btn btn-info" onclick="@("window.location.href='" + @Url.Action("PsychologistRegistration", "Home") + "'");">Rejestracja</button>
-                    </div>
+    </div>
+
+    <div class="py-4"></div>
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-7">
+                    <h2 class="text-primary py-2">W jakim celu wykonuje się test?</h2>
+                    <p class="">
+                        Test sortowania kart Wisconsin jest narzedziem wykorzystywanym przez psychologów w celu okreslenia zdolnosci myslenia abstrakcyjnego, rozumowania oraz zmiany nastawien pacjenta. Jak podaje Steuden, stosuje sie go do oceny pamieci operacyjnej, zaburzen funkcji wykonawczych, a takze zdolnosci pacjenta do rozwiazywania problemów. Jest to jeden z najbardziej popularnych testów neuropsychologicznych.
+                    </p>
+                </div>
+                <div class="col-md-5 align-self-center">
+                    <img class="img-fluid d-block w-100 img-thumbnail" src="~/Content/Images/b2.jpg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <img class="img-fluid d-block mb-4 w-100 img-thumbnail" src="~/Content/Images/test.jpg">
+                </div>
+                <div class="col-md-7">
+                    <h2 class="text-primary py-2">Na czym polega?</h2>
+                    <p class="">
+                        Istnieje wiele wersji przeprowadzania testu sortowania kart Wisconsin, jednak w kazdej z nich, rozkładane sa przed badanym cztery karty, tak zwane karty bodzcowe. Na kartach znajduja sie kolejno, czerwone koło, dwa zielone serca, trzy niebieskie trójkąty oraz cztery zółte krzyze. Kształt stosowanych figur, a takze dobór kolorów moze sie zmieniac. Najistotniejsze jest zeby rodzaj figur, ich kolory oraz liczba były rózne. W tym teście pacjent musi dopasować wyświetloną kartę do jednej z czterech, zaprezentowanych powyżej. Po kliknięciu karty, pojawia się informacja, czy karta została dopasowana dobrze, czy źle. Dzięki tej informacji musisz zgadnąć, jaka jest reguła dopasowania kart, czy jest to kolor, liczba, czy kształt na karcie. Reguły ulegają zmianie, więc po każdej zmianie trzeba ją na nowo odgadnąć.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="py-5 text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="">Na czym polega test?</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="lead">
-                            W tym teście musisz przypasować wyświetloną kartę do jednej z czterech, zaprezentowanych powyżej. Po kliknięciu jednej z kart, pojawi się informacja, czy karta została dopasowana dobrze, czy źle. Dzięki tej informacji musisz zgadnąć, jaka jest
-                            reguła dopasowania kart, czy jest to kolor, liczba, czy kształt na karcie. Reguły ulegają zmianie, więc po każdej zmianie trzeba ją na nowo odgadnąć. Przykładowy ekran widoczny po rozpoczęciu testu został zaprezentowany na dole.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <img class="img-fluid d-block" src="~/Content/Images/instr.png">
-                        <!--<img src="~/Content/Images/instr.png" style="width: 250px; height: 250px;" />-->
-                    </div>
+    </div>
+
+    <div class="py-2"></div>
+
+    <div class="bg-primary text-white modal-footer justify-content-end">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-3 text-center">
+                    <h5 class="text-white">
+                        Skontaktuj się z nami
+                        <br>
+                    </h5>
+                    <p>mail@gmail.com</p>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+
+</body>
 
 
 </html>

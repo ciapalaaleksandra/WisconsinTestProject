@@ -273,6 +273,8 @@
     <Content Include="Content\Audio\yes2.wav" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\4k.svg" />
+    <Content Include="Content\Images\b2.jpg" />
     <Content Include="Content\Images\cards\circle1b.png" />
     <Content Include="Content\Images\cards\circle1g.png" />
     <Content Include="Content\Images\cards\circle1r.png" />
@@ -340,9 +342,9 @@
     <Content Include="Content\Images\circleTest.png" />
     <Content Include="Content\Images\crossTest.png" />
     <Content Include="Content\Images\instr.png" />
-    <Content Include="Content\Images\logo.jpg" />
     <Content Include="Content\Images\rectangleTest.png" />
     <Content Include="Content\Images\starTest.png" />
+    <Content Include="Content\Images\test.JPG" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

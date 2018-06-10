@@ -15,10 +15,15 @@ namespace WisconsinTest.Controllers
     {
         public ActionResult Home()
         {
-            Session["LogedUserID"] = "";
+            //Session["LogedUserID"] = "";
             return View();
         }
 
+        public ActionResult LogOut()
+        {
+            Session.Abandon(); // it will clear the session at the end of request
+            return RedirectToAction("Home", "Home");
+        }
 
         //public ActionResult About()
         //{
