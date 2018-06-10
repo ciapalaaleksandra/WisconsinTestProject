@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WisconsinTest.Models;
-using PagedList;
+//using PagedList;
 
 namespace WisconsinTest.Controllers
 {

@@ -33,7 +33,7 @@ namespace WisconsinTest.Controllers
         //UTWORZENIE SESJI:
         public ActionResult Test(string button)
         {
-            if ((int)Session["NumberOfChanges"] <= 0)//6 ma byc
+            if ((int)Session["NumberOfChanges"] <= 6)//6 ma byc
             {
                 if (button == null)
                 {
